@@ -90,7 +90,7 @@ video {
 
 body {
   font-family: Nunito;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 .bodyLike {
@@ -292,13 +292,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin-bottom: auto;
 }
 
@@ -309,6 +302,7 @@ body {
 .productCard .brandColor .productColor {
   font-size: 13px;
   color: #3e3e3e;
+  margin-left: auto;
 }
 
 .productCard .productPrice {
@@ -376,11 +370,11 @@ body {
 
 .slider {
   margin: 0px 220px 30px 220px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
   padding-bottom: 15px;
   font-size: 18px;
   max-width: calc(100% - 440px);
-  overflow: scroll;
+  overflow-x: scroll;
   scrollbar-width: none;
   height: 25px;
 }
@@ -398,8 +392,8 @@ body {
 }
 
 .slider #activeCategory {
-  border-bottom: 3px solid #4B9CE2;
-  color: #4B9CE2;
+  border-bottom: 3px solid #4b9ce2;
+  color: #4b9ce2;
 }
 
 .slider::-webkit-scrollbar {
@@ -458,7 +452,7 @@ body {
     margin-right: 25px;
   }
   .slider #activeCategory {
-    border-bottom: 3px solid #4B9CE2;
+    border-bottom: 3px solid #4b9ce2;
   }
   .productCard {
     width: 173px;
@@ -470,8 +464,16 @@ body {
     width: 161px;
     height: 184px;
   }
+  .productCard .brandColor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 10px;
+  }
   .productCard .brandColor .productColor {
     font-size: 10px;
+    margin-left: 0px;
   }
   .productCard .productPrice {
     color: #3e3e3e;

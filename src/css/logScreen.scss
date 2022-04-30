@@ -90,7 +90,7 @@ video {
 
 body {
   font-family: Nunito;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 .bodyLike {
@@ -237,8 +237,6 @@ body {
   }
   .brandColor {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     margin-bottom: auto;
     .brandName {
       color: #4b9ce2;
@@ -246,6 +244,7 @@ body {
     .productColor {
       font-size: 13px;
       color: #3e3e3e;
+      margin-left: auto;
     }
   }
   .productPrice {
@@ -303,42 +302,41 @@ body {
   }
 }
 
-.slider{
+.slider {
   margin: 0px 220px 30px 220px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
   padding-bottom: 15px;
   font-size: 18px;
   max-width: calc(100% - 440px);
-  overflow:scroll;
+  overflow-x: scroll;
   scrollbar-width: none;
   height: 25px;
-  a{
-    color:#525252;
+  a {
+    color: #525252;
     padding-bottom: 14px;
     text-decoration: inherit;
     font-weight: 600;
     margin-right: 45px;
-    &:last-child{
+    &:last-child {
       margin-right: 0px;
     }
   }
-  #activeCategory{
-    border-bottom: 3px solid #4B9CE2;
-    color: #4B9CE2
-
+  #activeCategory {
+    border-bottom: 3px solid #4b9ce2;
+    color: #4b9ce2;
   }
 }
-.slider::-webkit-scrollbar{
+.slider::-webkit-scrollbar {
   display: none;
 }
 
 @media only screen and (max-width: 480px) {
   /* For mobile phones: */
-  body{
+  body {
     scrollbar-width: none;
   }
 
-  body::-webkit-scrollbar{
+  body::-webkit-scrollbar {
     display: none;
   }
   .bodyLike {
@@ -376,18 +374,16 @@ body {
     margin: 0px 10px;
   }
 
-  .slider{
+  .slider {
     margin: 0px 10px 20px 10px;
     padding-bottom: 8px;
     max-width: calc(100% - 20px);
-    a{
+    a {
       padding-bottom: 6px;
       margin-right: 25px;
-      
     }
-    #activeCategory{
-      border-bottom: 3px solid #4B9CE2;
-  
+    #activeCategory {
+      border-bottom: 3px solid #4b9ce2;
     }
   }
 
@@ -401,8 +397,11 @@ body {
       height: 184px;
     }
     .brandColor {
+      flex-direction: column;
+      margin-bottom: 10px;
       .productColor {
         font-size: 10px;
+        margin-left: 0px;
       }
     }
     .productPrice {
