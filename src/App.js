@@ -1,17 +1,20 @@
-import Login from "./pages/Login";
-import Signin from "./pages/Signin";
-import CardGroup from "./components/CardGroup";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Slider from "./components/Slider";
+import CardGroup from "./components/CardGroup";
 import "./css/logScreen.css";
+import React from "react";
+import { StoreProvider } from "./contexts/StoreContext.js";
 
 function App() {
   return (
     <>
-      <Header />
-      <Banner />
-      <Slider />
+      <StoreProvider>
+        <Header />
+        <Banner />
+        <Slider />
+        <CardGroup />
+      </StoreProvider>
     </>
   );
 }
