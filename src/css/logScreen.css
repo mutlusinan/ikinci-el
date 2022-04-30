@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.bodyLike {
+  font-family: Nunito;
+  background-color: #fbfbfb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+  color: #525252;
+}
+
+#loginLeft {
+  width: 45%;
+  height: 100vh;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#loginLeft img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+}
+
+#loginRight {
+  width: 55%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#loginLogo {
+  margin-bottom: 55px;
+  display: block;
+}
+
+.loginInput {
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+.loginInput p {
+  font-size: 15px;
+  letter-spacing: 0px;
+  margin-bottom: 5px;
+}
+
+.loginInput input {
+  background-color: #f4f4f4;
+  border: #f4f4f4 1px solid;
+  border-radius: 8px;
+  width: 100%;
+  height: 45px;
+  display: block;
+  padding: 0px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.loginInput input:focus {
+  outline: none !important;
+  border: #4b9ce2 1px solid;
+  border-color: #4b9ce2;
+  background-color: #f0f8ff;
+}
+
+.loginInput a {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #b1b1b1;
+  text-decoration: inherit;
+  float: right;
+}
+
+#loginBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: auto;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 3px 12px #1e36480a;
+          box-shadow: 0px 3px 12px #1e36480a;
+  border-radius: 8px;
+}
+
+#loginBlock button {
+  width: 80%;
+  height: 45px;
+  background: #4b9ce2;
+  border-radius: 8px;
+  border: 0 solid;
+  font: normal normal bold 18px/24px Nunito;
+  letter-spacing: 0px;
+  color: #ffffff;
+  margin-top: 15px;
+  margin-bottom: 41px;
+  cursor: pointer;
+}
+
+#girisYap {
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0px;
+  font-size: 32px;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+
+#girisAlt {
+  text-align: center;
+  letter-spacing: 0px;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+#loginDirectly {
+  font-size: 15px;
+  margin-bottom: 70px;
+}
+
+#loginDirectly a {
+  color: #4b9ce2;
+  text-decoration: inherit;
+}
+
+.cardGroup {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.productCard {
+  justify-self: center;
+  width: 280px;
+  height: 392px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-family: Nunito;
+  font-size: 15px;
+  background-color: #d4d4d4;
+  margin-bottom: 20px;
+}
+
+.productCard img {
+  width: 260px;
+  height: 297px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  border-radius: 8px;
+}
+
+.productCard .brandColor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: auto;
+}
+
+.productCard .brandColor .brandName {
+  color: #4b9ce2;
+}
+
+.productCard .brandColor .productColor {
+  font-size: 13px;
+  color: #3e3e3e;
+}
+
+.productCard .productPrice {
+  color: #3e3e3e;
+  font-size: 18px;
+  -ms-grid-column-align: last baseline;
+      justify-self: last baseline;
+  margin-top: auto;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  .bodyLike {
+    background-color: #f2f2f2;
+  }
+  #loginLeft {
+    display: none;
+  }
+  #loginRight {
+    width: 100%;
+  }
+  img {
+    width: 150px;
+  }
+  #loginBlock {
+    width: calc(100% - 20px);
+  }
+  #loginBlock button {
+    margin-top: 0px;
+  }
+  #girisYap {
+    margin-top: 22px;
+  }
+  #loginDirectly {
+    margin-bottom: 29px;
+  }
+  #loginLogo {
+    margin-bottom: 24px;
+  }
+  .cardGroup {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .productCard {
+    justify-self: center;
+    width: 173px;
+    height: 266px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 8px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 6px;
+    background-color: #d4d4d4;
+    margin-bottom: 20px;
+  }
+  .productCard img {
+    width: 260px;
+    height: 297px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center top;
+       object-position: center top;
+    border-radius: 8px;
+  }
+  .productCard .brandColor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: auto;
+  }
+  .productCard .brandColor .brandName {
+    color: #4b9ce2;
+  }
+  .productCard .brandColor .productColor {
+    font-size: 10px;
+    color: #3e3e3e;
+  }
+  .productCard .productPrice {
+    color: #3e3e3e;
+    font-size: 18px;
+    -ms-grid-column-align: last baseline;
+        justify-self: last baseline;
+    margin-top: auto;
+  }
+}
+/*# sourceMappingURL=logScreen.css.map */
