@@ -87,12 +87,13 @@ video {
   font: inherit;
   vertical-align: baseline;
   text-decoration: inherit;
-
 }
 
 body {
   font-family: Nunito;
   background-color: #f2f2f2;
+  text-decoration: inherit;
+
 }
 
 .bodyLike {
@@ -284,11 +285,12 @@ body {
     margin-right: 10px;
     max-height: 40px;
     cursor: pointer;
+    text-decoration: inherit;
 
-    &:first-of-type {
+    &.firstItem {
       margin-left: auto;
     }
-    &:last-of-type {
+    &.lastItem {
       margin-right: 0px;
     }
     span {
@@ -559,8 +561,7 @@ body {
       img {
         height: 100%;
         width: 100%;
-    object-fit: cover;
-
+        object-fit: cover;
       }
     }
     .productDetails {
@@ -575,10 +576,10 @@ body {
         height: 24px;
         font-size: 18px;
         margin-bottom: 10px;
-        order:1;
+        order: 1;
       }
       .detailProps {
-        order:3;
+        order: 3;
         display: inline-grid;
         grid-template-columns: 145px 1fr;
         margin-bottom: 10px;
@@ -587,7 +588,7 @@ body {
         }
       }
       .detailPrice {
-        order:2;
+        order: 2;
         height: 27px;
         font-size: 20px;
         margin-bottom: 10px;
@@ -618,7 +619,7 @@ body {
       }
       .detailAbout {
         order: 5;
-        
+
         .aboutHeader {
           margin-bottom: 0px;
         }

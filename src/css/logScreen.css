@@ -92,6 +92,7 @@ video {
 body {
   font-family: Nunito;
   background-color: #f2f2f2;
+  text-decoration: inherit;
 }
 
 .bodyLike {
@@ -350,13 +351,14 @@ body {
   margin-right: 10px;
   max-height: 40px;
   cursor: pointer;
+  text-decoration: inherit;
 }
 
-.header .headerButton:first-of-type {
+.header .headerButton.firstItem {
   margin-left: auto;
 }
 
-.header .headerButton:last-of-type {
+.header .headerButton.lastItem {
   margin-right: 0px;
 }
 

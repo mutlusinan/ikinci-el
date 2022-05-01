@@ -13,7 +13,8 @@ function Slider() {
     axios
       .get("https://bootcamp.akbolat.net/categories")
       .then((response) => setCategoryData(response.data))
-      .then((data) => setCategoryLoad(true));
+      .then((data) => setCategoryLoad(true)).then(console.log(categoryData))
+      
   }, []);
 
   const activeCategory = async (e) => {
@@ -25,6 +26,7 @@ function Slider() {
   useEffect(() => {
     console.log(clickedCategory);
   }, [clickedCategory]);
+  
 
   return (
     <div className="slider">

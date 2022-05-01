@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import Card from "../components/Card";
 import { StoreContext } from "../contexts/StoreContext.js";
-import logo from "../img/loginLogo.png";
 
 
 
@@ -18,9 +17,7 @@ function CardGroup() {
       .then(() => setCardLoad(true));
   }, []);
 
-  useEffect(() => {
-    console.log(cardData);
-  }, [cardData]);
+  
 
   return (
     <div className="cardGroup">
@@ -28,8 +25,9 @@ function CardGroup() {
         cardData.filter((card)=>(clickedCategory===card.category.name || clickedCategory==="Hepsi")).map((card) => (
             // card.isOfferable && !card.isSold &&
             <Card
-            img={ (card.image===null) ? "https://picsum.photos/200/300?grayscale" : ("https://bootcamp.akbolat.net"+card.image?.url)}
+            img={ (card.image===null) ? "https://picsum.photos/id/445/700/800" : ("https://bootcamp.akbolat.net/"+card.image?.url)}
             id={card.id}
+            key={card.id}
             brand= {card.brand}
             color= {card.color}
             price= {card.price}

@@ -1,5 +1,4 @@
 
-import ProductPage from "./components/ProductPage";
 import "./css/logScreen.css";
 import React from "react";
 import { StoreProvider } from "./contexts/StoreContext.js";

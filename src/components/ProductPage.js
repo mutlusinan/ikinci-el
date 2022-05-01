@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ladyInBlue from "../img/ladyInBlue.png";
 import axios from "axios";
 
-function ProductPage({id}) {
+function ProductPage({ id }) {
   const [productDetail, setProductDetail] = useState([]);
 
   useEffect(() => {
@@ -11,16 +10,18 @@ function ProductPage({id}) {
       .then((response) => setProductDetail(response.data));
   }, []);
 
-  useEffect(() => {
-    console.log(productDetail);
-  }, [productDetail]);
+  
 
   return (
     <>
       <div className="productDetail">
         <div className="productDetailImage">
           <img
-            src={"https://bootcamp.akbolat.net" + productDetail.image?.url}
+            src={
+              productDetail.image === null
+                ? "https://picsum.photos/id/445/700/800?grayscale"
+                : "https://bootcamp.akbolat.net/" + productDetail.image?.url
+            }
             alt="lady"
           />
         </div>
