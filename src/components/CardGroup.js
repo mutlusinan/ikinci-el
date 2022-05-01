@@ -22,7 +22,7 @@ function CardGroup() {
   return (
     <div className="cardGroup">
       {cardLoad &&
-        cardData.filter((card)=>(clickedCategory===card.category.name || clickedCategory==="Hepsi")).map((card) => (
+        cardData?.filter((card)=>(clickedCategory===card?.category?.name || clickedCategory==="Hepsi")).map((card) => (
             // card.isOfferable && !card.isSold &&
             <Card
             img={ (card.image===null) ? "https://picsum.photos/id/445/700/800" : ("https://bootcamp.akbolat.net/"+card.image?.url)}
