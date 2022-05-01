@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import Card from "../components/Card";
 import { StoreContext } from "../contexts/StoreContext.js";
+import logo from "../img/loginLogo.png";
+
 
 
 function CardGroup() {
@@ -11,7 +13,7 @@ function CardGroup() {
   const [cardLoad, setCardLoad] = useState(false);
   useEffect(() => {
     axios
-      .get("https://bootcamp.akbolat.net/products?_limit=20")
+      .get("https://bootcamp.akbolat.net/products")
       .then((response) => setCardData(response.data))
       .then(() => setCardLoad(true));
   }, []);
@@ -26,7 +28,7 @@ function CardGroup() {
         cardData.filter((card)=>(clickedCategory===card.category.name || clickedCategory==="Hepsi")).map((card) => (
             // card.isOfferable && !card.isSold &&
             <Card
-            img={ "https://bootcamp.akbolat.net"+card.image.url}
+            img={ (card.image===null) ? "https://picsum.photos/200/300?grayscale" : ("https://bootcamp.akbolat.net"+card.image?.url)}
             id={card.id}
             brand= {card.brand}
             color= {card.color}

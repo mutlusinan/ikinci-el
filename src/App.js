@@ -1,19 +1,15 @@
-import Header from "./components/Header";
-import Banner from "./components/Banner";
-import Slider from "./components/Slider";
-import CardGroup from "./components/CardGroup";
+
+import ProductPage from "./components/ProductPage";
 import "./css/logScreen.css";
 import React from "react";
 import { StoreProvider } from "./contexts/StoreContext.js";
+import Router from "./router/router.js";
 
 function App() {
   return (
     <>
       <StoreProvider>
-        <Header />
-        <Banner />
-        <Slider />
-        <CardGroup />
+        <Router />
       </StoreProvider>
     </>
   );

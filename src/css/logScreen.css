@@ -86,6 +86,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-decoration: inherit;
 }
 
 body {
@@ -385,6 +386,7 @@ body {
   text-decoration: inherit;
   font-weight: 600;
   margin-right: 45px;
+  cursor: pointer;
 }
 
 .slider a:last-child {
@@ -398,6 +400,147 @@ body {
 
 .slider::-webkit-scrollbar {
   display: none;
+}
+
+.productDetail {
+  margin: 20px 220px 0px 220px;
+  padding: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.productDetail .productDetailImage img {
+  width: 700px;
+  height: 737px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 8px;
+}
+
+.productDetail .productDetails {
+  margin-top: 14px;
+  margin-left: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #525252;
+}
+
+.productDetail .productDetails .detailHeader {
+  height: 46px;
+  font-size: 34px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.productDetail .productDetails .detailProps {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 165px 1fr;
+      grid-template-columns: 165px 1fr;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.productDetail .productDetails .detailProps .propHead {
+  height: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.productDetail .productDetails .detailPrice {
+  height: 34px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.productDetail .productDetails .detailButtons {
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.productDetail .productDetails .detailButtons .detailButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 200px;
+}
+
+.productDetail .productDetails .detailButtons .detailButton:first-child {
+  background-color: #4b9ce2;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.productDetail .productDetails .detailButtons .detailButton:last-child {
+  background-color: #f0f8ff;
+  color: #4b9ce2;
+  margin-right: 0px;
+}
+
+.productDetail .productDetails .detailAbout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productDetail .productDetails .detailAbout .aboutHeader {
+  height: 24px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.productDetail .productDetails .detailAbout .aboutDesc {
+  width: 480px;
+  text-align: left;
+  font: normal normal normal 15px/23px;
+  letter-spacing: 0px;
+  color: #555555;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 480px) {
@@ -514,6 +657,114 @@ body {
   .banner img {
     margin: 0px 10px 20px 10px;
     width: calc(100% - 20px);
+  }
+  .productDetail {
+    margin: 10px;
+    padding: 6px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .productDetail .productDetailImage img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .productDetail .productDetails {
+    margin-top: 10px;
+    margin-left: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    color: #525252;
+    margin-bottom: 2px;
+  }
+  .productDetail .productDetails .detailHeader {
+    height: 24px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .productDetail .productDetails .detailProps {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    display: -ms-inline-grid;
+    display: inline-grid;
+    -ms-grid-columns: 145px 1fr;
+        grid-template-columns: 145px 1fr;
+    margin-bottom: 10px;
+  }
+  .productDetail .productDetails .detailProps .propHead {
+    margin-bottom: 10px;
+  }
+  .productDetail .productDetails .detailPrice {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    height: 27px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .productDetail .productDetails .detailButtons {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    height: 45px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-bottom: 15px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .productDetail .productDetails .detailButtons .detailButton {
+    width: 100%;
+    min-width: 0px;
+  }
+  .productDetail .productDetails .detailButtons .detailButton:first-child {
+    background-color: #4b9ce2;
+    color: #fff;
+    margin-right: 11px;
+  }
+  .productDetail .productDetails .detailButtons .detailButton:last-child {
+    background-color: #f0f8ff;
+    color: #4b9ce2;
+    margin-right: 0px;
+  }
+  .productDetail .productDetails .detailAbout {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  .productDetail .productDetails .detailAbout .aboutHeader {
+    margin-bottom: 0px;
+  }
+  .productDetail .productDetails .detailAbout .aboutDesc {
+    width: auto;
+    text-align: left;
+    font: normal normal normal 15px/23px;
+    letter-spacing: 0px;
+    color: #555555;
+    opacity: 1;
   }
   .notVisibleMobile {
     display: none;
