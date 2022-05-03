@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
 html,
 body,
 div,
@@ -108,6 +109,7 @@ body {
   width: 45%;
   height: 100vh;
   align-items: flex-start;
+
   img {
     width: 100%;
     height: 100%;
@@ -129,14 +131,17 @@ body {
   margin-bottom: 55px;
   display: block;
 }
+
 .loginInput {
   width: 80%;
   margin-bottom: 15px;
+
   p {
     font-size: 15px;
     letter-spacing: 0px;
     margin-bottom: 5px;
   }
+
   input {
     background-color: #f4f4f4;
     border: #f4f4f4 1px solid;
@@ -148,12 +153,14 @@ body {
 
     box-sizing: border-box;
   }
+
   input:focus {
     outline: none !important;
     border: #4b9ce2 1px solid;
     border-color: #4b9ce2;
     background-color: #f0f8ff;
   }
+
   a {
     margin-top: 5px;
     font-size: 12px;
@@ -162,6 +169,7 @@ body {
     float: right;
   }
 }
+
 #loginBlock {
   display: flex;
   flex-direction: column;
@@ -172,6 +180,7 @@ body {
   background: #ffffff;
   box-shadow: 0px 3px 12px #1e36480a;
   border-radius: 8px;
+
   button {
     width: 80%;
     height: 45px;
@@ -195,15 +204,18 @@ body {
   margin-top: 70px;
   margin-bottom: 10px;
 }
+
 #girisAlt {
   text-align: center;
   letter-spacing: 0px;
   font-size: 15px;
   margin-bottom: 35px;
 }
+
 #loginDirectly {
   font-size: 15px;
   margin-bottom: 70px;
+
   a {
     color: #4b9ce2;
     text-decoration: inherit;
@@ -238,18 +250,22 @@ body {
     object-position: center top;
     border-radius: 8px;
   }
+
   .brandColor {
     display: flex;
     margin-bottom: auto;
+
     .brandName {
       color: #4b9ce2;
     }
+
     .productColor {
       font-size: 13px;
       color: #3e3e3e;
       margin-left: auto;
     }
   }
+
   .productPrice {
     color: #3e3e3e;
     font-size: 18px;
@@ -272,11 +288,13 @@ body {
   box-sizing: border-box;
   padding: 20px 220px;
   align-items: center;
+
   img {
     height: 40px;
     width: auto;
     cursor: pointer;
   }
+
   .headerButton {
     box-sizing: border-box;
     padding: 10px 19px;
@@ -290,9 +308,11 @@ body {
     &.firstItem {
       margin-left: auto;
     }
+
     &.lastItem {
       margin-right: 0px;
     }
+
     span {
       margin-left: 7px;
     }
@@ -315,6 +335,7 @@ body {
   overflow-x: scroll;
   scrollbar-width: none;
   height: 25px;
+
   a {
     color: #525252;
     padding-bottom: 14px;
@@ -327,11 +348,13 @@ body {
       margin-right: 0px;
     }
   }
+
   #activeCategory {
     border-bottom: 3px solid #4b9ce2;
     color: #4b9ce2;
   }
 }
+
 .slider::-webkit-scrollbar {
   display: none;
 }
@@ -344,6 +367,7 @@ body {
   border-radius: 8px;
   display: flex;
   flex-direction: row;
+
   .productDetailImage {
     img {
       width: 700px;
@@ -353,6 +377,7 @@ body {
       border-radius: 8px;
     }
   }
+
   .productDetails {
     margin-top: 14px;
     margin-left: 60px;
@@ -366,30 +391,35 @@ body {
       color: #555;
       margin-bottom: 25px;
     }
+
     .detailProps {
       display: inline-grid;
       grid-template-columns: 165px 1fr;
       grid-template-rows: auto auto auto;
       font-size: 15px;
       margin-bottom: 10px;
+
       .propHead {
         height: 20px;
         font-weight: bold;
         margin-bottom: 20px;
       }
     }
+
     .detailPrice {
       height: 34px;
       font-size: 25px;
       font-weight: bold;
       margin-bottom: 30px;
     }
+
     .detailButtons {
       height: 45px;
       display: flex;
       flex-direction: row;
       margin-bottom: 30px;
       cursor: pointer;
+
       .detailButton {
         display: flex;
         justify-content: center;
@@ -407,6 +437,7 @@ body {
           color: #fff;
           margin-right: 10px;
         }
+
         &:last-child {
           background-color: #f0f8ff;
           color: #4b9ce2;
@@ -414,15 +445,18 @@ body {
         }
       }
     }
+
     .detailAbout {
       display: flex;
       flex-direction: column;
+
       .aboutHeader {
         height: 24px;
         font-size: 18px;
         margin-bottom: 10px;
         font-weight: bold;
       }
+
       .aboutDesc {
         width: 480px;
         text-align: left;
@@ -435,7 +469,125 @@ body {
   }
 }
 
+
+.userCard {
+  height: 70px;
+  margin: 20px 220px 10px 220px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px 0px 16px 26px;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: #FFF;
+
+  .userNameDisplay {
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+}
+
+
+
+.offerTable {
+  margin: 0px 220px 80px 220px;
+  background-color: #FFF;
+  border-radius: 8px;
+
+  .offerSelection {
+    padding-bottom: 6px;
+    padding-top: 20px;
+    border-bottom: 1px solid #e0e0e0;
+
+    span {
+      margin-left: 30px;
+      padding-bottom: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .offerCards {
+    height: 600px;
+    margin: 20px 40px 0px 30px;
+    padding: 10px;
+
+    .takenCards {
+      border: 1px solid #F2F2F2;
+      border-radius: 8px;
+      padding: 10px;
+      height: 104px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 78px;
+        height: 84px;
+      }
+
+      button {
+        margin-left: auto;
+        margin-right: 10px;
+        width: 86px;
+        height: 30px;
+        font-size: 15px;
+        border-radius: 8px;
+        color: #FFF;
+        border: none;
+        background-color: #4B9CE2;
+
+        &:last-of-type {
+          background-color: #F77474;
+          margin-right: 30px;
+          margin-left: 0px;
+
+        }
+      }
+
+      .namePrice {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        .takenName {
+          font-size: 18px;
+          color: #555;
+          margin-bottom: 7px;
+        }
+
+        .takenPrice {
+          width: 230px;
+          height: 36px;
+          border-radius: 8px;
+          background-color: #F2F2F2;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          box-sizing: border-box;
+          padding: 8px 10px;
+
+          .first {
+            margin-right: 7px;
+            font-size: 15px;
+            color: #B1B1B1
+          }
+
+          .second {
+            font-size: 15px;
+            font-weight: bold;
+            color: #525252
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 480px) {
+
   /* For mobile phones: */
   body {
     scrollbar-width: none;
@@ -444,9 +596,11 @@ body {
   body::-webkit-scrollbar {
     display: none;
   }
+
   .bodyLike {
     background-color: #f2f2f2;
   }
+
   #loginLeft {
     display: none;
   }
@@ -454,21 +608,27 @@ body {
   #loginRight {
     width: 100%;
   }
+
   img {
     width: 150px;
   }
+
   #loginBlock {
     width: calc(100% - 20px);
+
     button {
       margin-top: 0px;
     }
   }
+
   #girisYap {
     margin-top: 22px;
   }
+
   #loginDirectly {
     margin-bottom: 29px;
   }
+
   #loginLogo {
     margin-bottom: 24px;
   }
@@ -483,10 +643,12 @@ body {
     margin: 0px 10px 20px 10px;
     padding-bottom: 8px;
     max-width: calc(100% - 20px);
+
     a {
       padding-bottom: 6px;
       margin-right: 25px;
     }
+
     #activeCategory {
       border-bottom: 3px solid #4b9ce2;
     }
@@ -497,18 +659,22 @@ body {
     height: 266px;
     padding: 6px;
     margin-bottom: 10px;
+
     img {
       width: 161px;
       height: 184px;
     }
+
     .brandColor {
       flex-direction: column;
       margin-bottom: 10px;
+
       .productColor {
         font-size: 10px;
         margin-left: 0px;
       }
     }
+
     .productPrice {
       color: #3e3e3e;
       font-size: 18px;
@@ -521,10 +687,12 @@ body {
     height: 60px;
     padding: 10px;
     align-items: center;
+
     img {
       height: 30px;
       width: auto;
     }
+
     .headerButton {
       box-sizing: border-box;
       padding: 10px 19px;
@@ -532,12 +700,16 @@ body {
       border-radius: 8px;
       margin-right: 10px;
       max-height: 40px;
+
       &:first-of-type {
         margin-left: auto;
       }
+
       &:last-of-type {
         margin-right: 0px;
+        margin-left: 10px;
       }
+
       span {
         margin-left: 7px;
       }
@@ -557,6 +729,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .productDetailImage {
       img {
         height: 100%;
@@ -564,6 +737,7 @@ body {
         object-fit: cover;
       }
     }
+
     .productDetails {
       margin-top: 10px;
       margin-left: 0px;
@@ -578,21 +752,25 @@ body {
         margin-bottom: 10px;
         order: 1;
       }
+
       .detailProps {
         order: 3;
         display: inline-grid;
         grid-template-columns: 145px 1fr;
         margin-bottom: 10px;
+
         .propHead {
           margin-bottom: 10px;
         }
       }
+
       .detailPrice {
         order: 2;
         height: 27px;
         font-size: 20px;
         margin-bottom: 10px;
       }
+
       .detailButtons {
         order: 4;
         height: 45px;
@@ -601,6 +779,7 @@ body {
         margin-bottom: 15px;
         cursor: pointer;
         width: 100%;
+
         .detailButton {
           width: 100%;
           min-width: 0px;
@@ -610,6 +789,7 @@ body {
             color: #fff;
             margin-right: 11px;
           }
+
           &:last-child {
             background-color: #f0f8ff;
             color: #4b9ce2;
@@ -617,12 +797,14 @@ body {
           }
         }
       }
+
       .detailAbout {
         order: 5;
 
         .aboutHeader {
           margin-bottom: 0px;
         }
+
         .aboutDesc {
           width: auto;
           text-align: left;
