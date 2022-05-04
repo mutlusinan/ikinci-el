@@ -1,10 +1,31 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import logo from "../img/loginLogo.png";
 import Plus from "../constants/Plus.js";
 import Dude from "../constants/Dude.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { StoreContext } from "../contexts/StoreContext.js";
 
 function Header() {
+  const navigate = useNavigate();
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  function loginOrSignin(loggedIn) {
+    if (loggedIn) {
+      navigate("/myPage", { replace: true });
+    } else {
+      navigate("/login", { replace: true });
+    }
+  }
+
+
+  useEffect(() => {
+    if(localStorage.getItem("userInfo")!==null)
+    {
+      setLoggedIn(true);
+    }
+  }, []);
+
   return (
     <>
       <div className="header">
@@ -15,12 +36,11 @@ function Header() {
           <Plus />
           <span className="notVisibleMobile">Ürün Ekle</span>
         </span>
-        <Link to="/login">
-        <span className="headerButton lastItem">
+
+        <button className="headerButton lastItem" onClick={()=> loginOrSignin(loggedIn)}>
           <Dude />
-          <span>Giriş Yap</span>
-        </span>
-        </Link>
+          <span>{loggedIn ? "Hesabım" : "Giriş Yap"}</span>
+        </button>
       </div>
     </>
   );

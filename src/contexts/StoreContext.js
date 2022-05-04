@@ -5,17 +5,26 @@ const StoreContext = React.createContext();
 const StoreProvider = ({ children }) => {
   //Seçili kategori
   const [clickedCategory, setClickedCategory] = useState("Hepsi");
- 
-//   //Soru sayısını bir artır
-//   const kacSoru = (data) => {
-//     setSessionQ(sessionQ + 1);
-//   };
+  const [userID, setUserID] = useState(null);
+  const [userToken, setUserToken] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  //   //Soru sayısını bir artır
+  //   const kacSoru = (data) => {
+  //     setSessionQ(sessionQ + 1);
+  //   };
 
   return (
     <StoreContext.Provider
       value={{
         clickedCategory,
-        setClickedCategory      
+        setClickedCategory,
+        userID,
+        setUserID,
+        userToken,
+        setUserToken,
+        loggedIn,
+        setLoggedIn
       }}
     >
       {children}

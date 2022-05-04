@@ -222,6 +222,10 @@ body {
   cursor: pointer;
 }
 
+#loginBlock button:disabled {
+  background-color: #adadad;
+}
+
 #girisYap {
   text-align: center;
   font-weight: bold;
@@ -320,9 +324,6 @@ body {
 }
 
 .header {
-  font-weight: bold;
-  font-size: 15px;
-  color: #4b9ce2;
   height: 80px;
   background-color: #ffffff;
   display: -webkit-box;
@@ -352,6 +353,11 @@ body {
   max-height: 40px;
   cursor: pointer;
   text-decoration: inherit;
+  border: none;
+  font-weight: bold;
+  color: #4b9ce2;
+  font-family: Nunito;
+  font-size: 15px;
 }
 
 .header .headerButton.firstItem {
@@ -545,6 +551,265 @@ body {
   opacity: 1;
 }
 
+.userCard {
+  height: 70px;
+  margin: 20px 220px 10px 220px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 16px 0px 16px 26px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+}
+
+.userCard .userNameDisplay {
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.offerTable {
+  margin: 0px 220px 80px 220px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.offerTable .offerSelection {
+  padding-bottom: 6px;
+  padding-top: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.offerTable .offerSelection span {
+  margin-left: 30px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.offerTable .offerCards {
+  height: 600px;
+  margin: 20px 40px 0px 30px;
+  padding: 10px;
+}
+
+.offerTable .offerCards .takenCards {
+  border: 1px solid #f2f2f2;
+  border-radius: 8px;
+  padding: 10px;
+  height: 104px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offerTable .offerCards .takenCards img {
+  width: 78px;
+  height: 84px;
+}
+
+.offerTable .offerCards .takenCards button {
+  margin-left: auto;
+  margin-right: 10px;
+  width: 86px;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  background-color: #4b9ce2;
+}
+
+.offerTable .offerCards .takenCards button:last-of-type {
+  background-color: #f77474;
+  margin-right: 30px;
+  margin-left: 0px;
+}
+
+.offerTable .offerCards .takenCards .namePrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 10px;
+}
+
+.offerTable .offerCards .takenCards .namePrice .takenName {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 7px;
+}
+
+.offerTable .offerCards .takenCards .namePrice .takenPrice {
+  width: 230px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px 10px;
+}
+
+.offerTable .offerCards .takenCards .namePrice .takenPrice .first {
+  margin-right: 7px;
+  font-size: 15px;
+  color: #b1b1b1;
+}
+
+.offerTable .offerCards .takenCards .namePrice .takenPrice .second {
+  font-size: 15px;
+  font-weight: bold;
+  color: #525252;
+}
+
+.addProductCard {
+  margin: 20px 220px 0px 220px;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 8px;
+  height: 700px;
+}
+
+.addProductCard .addProductLeft {
+  height: 34px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-right: 45px;
+  border-right: 1px solid #f2f2f2;
+  width: 100%;
+}
+
+.addProductDetailsHeader {
+  font-weight: bold;
+  font-size: 25px;
+  color: #525252;
+}
+
+.addProductDetails {
+  text-align: left;
+  font: normal normal normal 15px/20px Nunito;
+  letter-spacing: 0px;
+  color: #525252;
+}
+
+.addForm input {
+  font-size: 16px;
+  border: none;
+  background: #f4f4f4 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.addForm p {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.addForm select {
+  font-size: 16px;
+  border: none;
+  background: #f4f4f4 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  width: 100%;
+  height: 45px;
+}
+
+.inputName {
+  height: 45px;
+}
+
+.inputDesc {
+  height: 92px;
+  resize: none;
+  font-size: 16px;
+  border: none;
+  background: #f4f4f4 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  width: 100%;
+  font: normal normal normal 16px/22px Nunito;
+}
+
+.formGrid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.priceLess {
+  position: relative;
+  display: inline-block;
+}
+
+.priceInput {
+  padding-right: 35px;
+  width: 236px;
+  height: 45px;
+}
+
+.priceHelper {
+  position: absolute;
+  right: -30px;
+  top: 13px;
+  color: #99a0a7;
+  font-size: 16px;
+}
+
+.switchButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.switchBtn {
+  margin-right: 120px;
+  margin-top: 20px;
+  font: normal normal normal 16px/22px Nunito;
+  color: #b1b1b1;
+}
+
 @media only screen and (max-width: 480px) {
   /* For mobile phones: */
   body {
@@ -570,6 +835,9 @@ body {
   }
   #loginBlock button {
     margin-top: 0px;
+  }
+  #loginBlock button:disabled {
+    background-color: #adadad;
   }
   #girisYap {
     margin-top: 22px;
@@ -652,6 +920,7 @@ body {
   }
   .header .headerButton:last-of-type {
     margin-right: 0px;
+    margin-left: 10px;
   }
   .header .headerButton span {
     margin-left: 7px;
@@ -771,5 +1040,51 @@ body {
   .notVisibleMobile {
     display: none;
   }
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 44px;
+  height: 24px;
+  background: #EBEBEB;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0px 2px 4px #1e36482e;
+          box-shadow: 0px 2px 4px #1e36482e;
+}
+
+input:checked + label {
+  background: #4b9ce2;
+}
+
+input:checked + label:after {
+  left: calc(100% - 2px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 20px;
 }
 /*# sourceMappingURL=logScreen.css.map */
