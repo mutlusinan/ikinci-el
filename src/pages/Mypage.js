@@ -1,44 +1,35 @@
 import React, { useState, useContext } from "react";
 
 import Header from "../components/Header";
-import Avatar from "../constants/Avatar.js";
+import OfferedProducts from "../components/OfferedProducts";
+import OfferingProducts from "../components/OfferingProducts";
+import Usercard from "../components/Usercard";
 import { StoreContext } from "../contexts/StoreContext.js";
 
 function Mypage() {
-  const { userID, setUserID } = useContext(StoreContext);
+  const [clickedOffer, setClickedOffer] = useState("Teklif Aldıklarım");
 
-  const storagedInfo = JSON.parse(localStorage.getItem("userInfo"))
 
+  const storagedInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+  const activeCategory = async (e) => {
+    document.querySelector("#activeCategory").removeAttribute("id");
+    e.currentTarget.setAttribute("id", "activeCategory");
+    setClickedOffer(e.currentTarget.innerHTML);
+  };
 
   return (
     <>
       <Header />
-      <div className="userCard">
-        <span className="userAvatar">
-          <Avatar />
-        </span>
-        <span className="userNameDisplay">{storagedInfo?.user?.email}</span>
-      </div>
+      <Usercard />
       <div className="offerTable">
         <div className="offerSelection">
-          <span id="activeCategory">Teklif Aldıklarım</span>
-          <span>Teklif Verdiklerim</span>
+          <span id="activeCategory" onClick={activeCategory}>Teklif Aldıklarım</span>
+          <span onClick={activeCategory}>Teklif Verdiklerim</span>
         </div>
-        <div className="offerCards">
-          <div className="takenCards">
-            <img src="/" alt="product" />
-            <span className="namePrice">
-              <span className="takenName">Beli Uzun Trençkot Kareli</span>
-              <span className="takenPrice">
-                <span className="first">Alınan Teklif</span>
-                <span className="second">100 TL</span>
-              </span>
-            </span>
-            <button>Onayla</button>
-            <button>Reddet</button>
-            <span></span>
-          </div>
-        </div>
+      {clickedOffer === "Teklif Aldıklarım" && <OfferedProducts />}
+      {clickedOffer === "Teklif Verdiklerim" && <OfferingProducts />}
+      
       </div>
     </>
   );

@@ -32,7 +32,8 @@ function Header() {
         <Link to="/">
           <img src={logo} alt="logo"></img>
         </Link>
-        <span className="headerButton firstItem">
+        
+        <span className="headerButton firstItem" onClick={()=> navigate("/addproduct", { replace: true })}>
           <Plus />
           <span className="notVisibleMobile">Ürün Ekle</span>
         </span>

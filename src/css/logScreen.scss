@@ -509,8 +509,7 @@ body {
   }
 
   .offerCards {
-    height: 600px;
-    margin: 20px 40px 0px 30px;
+    margin: 0px 40px 0px 30px;
     padding: 10px;
 
     .takenCards {
@@ -526,6 +525,8 @@ body {
       img {
         width: 78px;
         height: 84px;
+        object-fit: cover;
+        border-radius: 8px;
       }
 
       button {
@@ -544,6 +545,29 @@ body {
           margin-right: 30px;
           margin-left: 0px;
         }
+
+        &:only-of-type {
+          background-color: #4b9ce2;
+          margin-right: 0px;
+          margin-left: auto;
+        }
+      }
+
+      .response {
+        margin-left: auto;
+        margin-right: 30px;
+        font: normal normal normal 15px/23px Nunito;
+      }
+
+      .response.granted {
+        margin-left: 30px;
+        &:last-of-type{
+          margin-left: auto;
+        }
+      }
+
+      .response.granted.permission {
+        margin-left: 30px;
       }
 
       .namePrice {
@@ -585,23 +609,79 @@ body {
   }
 }
 
+.granted {
+  color: #4b9ce2;
+}
+
+.denied {
+  color: #f77474;
+}
+
+.accepted {
+  color: #46af32;
+}
+
 .addProductCard {
-  margin: 20px 220px 0px 220px;
+  margin: 20px 220px 20px 220px;
   padding: 30px;
   box-sizing: border-box;
   background-color: #ffffff;
   border-radius: 8px;
-  height: 700px;
+  height: 100%;
+
+  .addForm {
+    display: flex;
+    flex-direction: column;
+    input,
+    select {
+      font-size: 16px;
+      border: none;
+      background: #f4f4f4 0% 0% no-repeat padding-box;
+      border-radius: 8px;
+      width: 100%;
+    }
+    p {
+      margin-top: 25px;
+      margin-bottom: 5px;
+    }
+    select {
+      height: 45px;
+    }
+    button {
+      margin-top: 100px;
+      margin-left: auto;
+      width: 315px;
+      height: 45px;
+      background: #4b9ce2;
+      border-radius: 8px;
+      border: 0 solid;
+      font: normal normal bold 18px/24px Nunito;
+      letter-spacing: 0px;
+      color: #ffffff;
+      cursor: pointer;
+      display: block;
+    }
+  }
+
+  .addProduct {
+    display: flex;
+    flex: row;
+  }
 
   .addProductLeft {
-    height: 34px;
     box-sizing: border-box;
-    padding-right: 45px;
     border-right: 1px solid #f2f2f2;
-    width: 100%;
+    padding-right: 48px;
+    width: 60%;
   }
 
   .addProductRight {
+    box-sizing: border-box;
+    padding-left: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
   }
 }
 
@@ -612,32 +692,9 @@ body {
 }
 
 .addProductDetails {
-  text-align: left;
   font: normal normal normal 15px/20px Nunito;
   letter-spacing: 0px;
   color: #525252;
-}
-
-.addForm {
-  input {
-    font-size: 16px;
-    border: none;
-    background: #f4f4f4 0% 0% no-repeat padding-box;
-    border-radius: 8px;
-    width: 100%;
-  }
-  p {
-    margin-top: 25px;
-    margin-bottom: 5px;
-  }
-  select {
-    font-size: 16px;
-    border: none;
-    background: #f4f4f4 0% 0% no-repeat padding-box;
-    border-radius: 8px;
-    width: 100%;
-    height: 45px;
-  }
 }
 
 .inputName {
@@ -658,7 +715,7 @@ body {
 .formGrid {
   display: grid;
   column-gap: 24px;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
 }
 
 .priceLess {
@@ -688,6 +745,33 @@ body {
   margin-top: 20px;
   font: normal normal normal 16px/22px Nunito;
   color: #b1b1b1;
+}
+
+.uploadedImage {
+  width: 113px;
+  height: 113px;
+  object-fit: cover;
+  object-position: center top;
+  cursor: pointer;
+}
+
+.removeBtn {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  margin-left: 103px;
+  margin-top: -9px;
+}
+
+.addImage {
+  input {
+    font-size: 16px;
+    border: none;
+    background: white;
+    border-radius: 0px;
+    width: auto;
+    font-family: Nunito;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -755,9 +839,7 @@ body {
       margin-right: 25px;
     }
 
-    #activeCategory {
-      border-bottom: 3px solid #4b9ce2;
-    }
+    
   }
 
   .productCard {
@@ -928,45 +1010,51 @@ body {
   }
 }
 
-input[type="checkbox"] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+.switchButton {
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 44px;
+    height: 24px;
+    background: #ebebeb;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+
+  label:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+    box-shadow: 0px 2px 4px #1e36482e;
+  }
+
+  input:checked + label {
+    background: #4b9ce2;
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+
+  label:active:after {
+    width: 20px;
+  }
 }
 
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 44px;
-  height: 24px;
-  background: #EBEBEB;
-  display: block;
-  border-radius: 100px;
-  position: relative;
-}
-
-label:after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 90px;
-  transition: 0.3s;
-  box-shadow: 0px 2px 4px #1e36482e;
-}
-
-input:checked + label {
-  background: #4b9ce2;
-}
-
-input:checked + label:after {
-  left: calc(100% - 2px);
-  transform: translateX(-100%);
-}
-
-label:active:after {
-  width: 20px;
+#activeCategory {
+  border-bottom: 3px solid #4b9ce2;
 }

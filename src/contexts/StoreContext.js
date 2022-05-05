@@ -8,11 +8,7 @@ const StoreProvider = ({ children }) => {
   const [userID, setUserID] = useState(null);
   const [userToken, setUserToken] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
-
-  //   //Soru sayısını bir artır
-  //   const kacSoru = (data) => {
-  //     setSessionQ(sessionQ + 1);
-  //   };
+  
 
   return (
     <StoreContext.Provider
@@ -24,7 +20,25 @@ const StoreProvider = ({ children }) => {
         userToken,
         setUserToken,
         loggedIn,
-        setLoggedIn
+        setLoggedIn,
+        // productName,
+        // setProductName,
+        // productDesc,
+        // setProductDesc,
+        // productCategory,
+        // setProductCategory,
+        // productBrand,
+        // setProductBrand,
+        // productColor,
+        // setProductColor,
+        // productUsing,
+        // setProductUsing,
+        // productPrice,
+        // setProductPrice,
+        // productOffer,
+        // setProductOffer,
+        // productImage,
+        // setProductImage,
       }}
     >
       {children}
