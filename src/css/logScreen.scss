@@ -414,10 +414,34 @@ body {
       height: 34px;
       font-size: 25px;
       font-weight: bold;
-      margin-bottom: 30px;
+    }
+
+    .offeredPrice {
+      width: 230px;
+      height: 36px;
+      background: #f2f2f2 0% 0% no-repeat padding-box;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 8px 0px 8px 10px;
+      span {
+        font-family: Nunito;
+        font-size: 15px;
+        &:first-child {
+          color:#B1B1B1
+        }
+        &:last-child {
+          color: #525252;
+          font-weight: bold;
+          margin-left: 4px;
+        }
+      }
     }
 
     .detailButtons {
+      margin-top: 30px;
       height: 45px;
       display: flex;
       flex-direction: row;
@@ -811,6 +835,7 @@ body {
       align-items: center;
       border: none;
       font: normal normal bold 18px/24px Nunito;
+      cursor: pointer;
     }
   }
   .closeButton {
@@ -1191,4 +1216,8 @@ body {
 
 #activeCategory {
   border-bottom: 3px solid #4b9ce2;
+}
+
+.hidden {
+  visibility: hidden;
 }

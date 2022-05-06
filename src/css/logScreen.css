@@ -477,10 +477,45 @@ body {
   height: 34px;
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 30px;
+}
+
+.productDetail .productDetails .offeredPrice {
+  width: 230px;
+  height: 36px;
+  background: #f2f2f2 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px 0px 8px 10px;
+}
+
+.productDetail .productDetails .offeredPrice span {
+  font-family: Nunito;
+  font-size: 15px;
+}
+
+.productDetail .productDetails .offeredPrice span:first-child {
+  color: #B1B1B1;
+}
+
+.productDetail .productDetails .offeredPrice span:last-child {
+  color: #525252;
+  font-weight: bold;
+  margin-left: 4px;
 }
 
 .productDetail .productDetails .detailButtons {
+  margin-top: 30px;
   height: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -979,6 +1014,7 @@ body {
           align-items: center;
   border: none;
   font: normal normal bold 18px/24px Nunito;
+  cursor: pointer;
 }
 
 .productOffer .closeButton {
@@ -1384,5 +1420,9 @@ body {
 
 #activeCategory {
   border-bottom: 3px solid #4b9ce2;
+}
+
+.hidden {
+  visibility: hidden;
 }
 /*# sourceMappingURL=logScreen.css.map */

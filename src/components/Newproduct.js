@@ -57,11 +57,9 @@ function Newproduct() {
     e.preventDefault();
     setLoading(true);
 
-    const token = userInfo.jwt;
-
     const config = {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${userInfo.jwt}`,
       },
     };
 
