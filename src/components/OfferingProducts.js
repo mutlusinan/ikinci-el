@@ -20,7 +20,6 @@ function OfferingProducts() {
       .get("https://bootcamp.akbolat.net/offers?_limit=2000", config)
       .then((response) => {
         setOfferDetail(response.data);
-        console.log(response.data);
       });
   }, []);
 
@@ -29,24 +28,23 @@ function OfferingProducts() {
   ).reverse();
 
 
-  console.log(offeringList);
 
   return (
     <>
-    {offeringList.length === 0 && <DummyListed/>}
+    {offeringList.length === 0 && <DummyListed offerStatus="offering" />}
       {offeringList.map((offer) => (
         
         <ListedProducts
-          key={offer.id}
+          key={offer?.id}
           img={
             offer?.product?.image === null
               ? "https://picsum.photos/id/445/700/800"
-              : "https://bootcamp.akbolat.net/" + offer.product.image?.url
+              : "https://bootcamp.akbolat.net/" + offer?.product?.image?.url
           }
           name={offer?.product?.name}
           offerPrice={offer?.offerPrice}
-          productID={offer?.product.id}
-          token={userInfo.jwt}
+          productID={offer?.product?.id}
+          token={userInfo?.jwt}
           offerResult={offer?.isStatus}
           isSold={offer?.product?.isSold}
           offerStatus="offering"

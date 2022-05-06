@@ -12,7 +12,7 @@ function CardGroup() {
   const [cardLoad, setCardLoad] = useState(false);
   useEffect(() => {
     axios
-      .get("https://bootcamp.akbolat.net/products")
+      .get("https://bootcamp.akbolat.net/products?_limit=2000")
       .then((response) => setCardData(response.data))
       .then(() => setCardLoad(true));
   }, []);
@@ -23,9 +23,9 @@ function CardGroup() {
     <div className="cardGroup">
       {cardLoad &&
         cardData?.filter((card)=>(clickedCategory===card?.category?.name || clickedCategory==="Hepsi")).map((card) => (
-            card.isOfferable && !card.isSold &&
+            
             <Card
-            img={ (card.image===null) ? "https://picsum.photos/id/445/700/800" : ("https://bootcamp.akbolat.net/"+card.image?.url)}
+            img={ (card.image===null) ? "https://picsum.photos/id/445/700/800" : ("https://bootcamp.akbolat.net/"+card?.image?.url)}
             id={card.id}
             key={card.id}
             brand= {card.brand}

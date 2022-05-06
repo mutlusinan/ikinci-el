@@ -38,17 +38,13 @@ function LoginComp() {
       .then((response) => {
         localStorage.setItem("userInfo", JSON.stringify(response.data));
         setLoggedIn(true);
-        navigate("/", { replace: true });
+        navigate("/", { replace: false });
       })
       .catch((error) => {
         notify();
       })
       .finally(setLoading(false));
   }
-
-  useEffect(() => {
-    console.log(email, password);
-  }, [email, password]);
 
   useEffect(() => {
     if (loggedIn) {

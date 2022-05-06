@@ -19,8 +19,6 @@ function ListedProducts(props) {
         config
       )
       .then((response) => {
-        console.log(response.data);
-        console.log("yaynay", yaynay);
       });
   }
 
@@ -32,7 +30,6 @@ function ListedProducts(props) {
         config
       )
       .then((response) => {
-        console.log(response.data);
       });
   }
 
@@ -44,7 +41,7 @@ function ListedProducts(props) {
           <span className="namePrice">
             <span className="takenName" onClick={()=> navigate("/products/"+props.productID, { replace: false })}>{props.name}</span>
             <span className="takenPrice">
-              <span className="first">Alınan Teklif</span>
+              <span className="first">{(props.offerStatus==="myproduct") ? "Ürün fiyatı" : "Alınan Teklif"}</span>
               <span className="second">{props.offerPrice} TL</span>
             </span>
           </span>

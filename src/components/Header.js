@@ -4,24 +4,20 @@ import Plus from "../constants/Plus.js";
 import Dude from "../constants/Dude.js";
 import { Link, useNavigate } from "react-router-dom";
 
-import { StoreContext } from "../contexts/StoreContext.js";
-
 function Header() {
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
 
   function loginOrSignin(loggedIn) {
     if (loggedIn) {
-      navigate("/myPage", { replace: true });
+      navigate("/myPage", { replace: false });
     } else {
-      navigate("/login", { replace: true });
+      navigate("/login", { replace: false });
     }
   }
 
-
   useEffect(() => {
-    if(localStorage.getItem("userInfo")!==null)
-    {
+    if (localStorage.getItem("userInfo") !== null) {
       setLoggedIn(true);
     }
   }, []);
@@ -32,13 +28,23 @@ function Header() {
         <Link to="/">
           <img src={logo} alt="logo"></img>
         </Link>
-        
-        <span className="headerButton firstItem" onClick={()=> navigate("/addproduct", { replace: true })}>
+
+        <span
+          className="headerButton firstItem"
+          onClick={
+            loggedIn
+              ? () => navigate("/addproduct", { replace: false })
+              : () => navigate("/signin", { replace: false })
+          }
+        >
           <Plus />
           <span className="notVisibleMobile">Ürün Ekle</span>
         </span>
 
-        <button className="headerButton lastItem" onClick={()=> loginOrSignin(loggedIn)}>
+        <button
+          className="headerButton lastItem"
+          onClick={() => loginOrSignin(loggedIn)}
+        >
           <Dude />
           <span>{loggedIn ? "Hesabım" : "Giriş Yap"}</span>
         </button>

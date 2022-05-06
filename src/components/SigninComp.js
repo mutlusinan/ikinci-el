@@ -38,7 +38,7 @@ function SigninComp() {
       })
       .then((response) => {
         localStorage.setItem("userInfo", JSON.stringify(response.data));
-        navigate("/", { replace: true });
+        navigate("/", { replace: false });
       })
       .catch((error) => {
         notify();
@@ -47,7 +47,6 @@ function SigninComp() {
   }
 
   useEffect(() => {
-    console.log(email, password, username);
     setUsername(email.split("@")[0]);
   }, [email, password]);
 

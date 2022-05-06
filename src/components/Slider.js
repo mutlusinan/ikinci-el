@@ -13,7 +13,7 @@ function Slider() {
     axios
       .get("https://bootcamp.akbolat.net/categories")
       .then((response) => setCategoryData(response.data))
-      .then((data) => setCategoryLoad(true)).then(console.log(categoryData))
+      .then((data) => setCategoryLoad(true))
       
   }, []);
 
@@ -22,11 +22,6 @@ function Slider() {
     e.currentTarget.setAttribute("id", "activeCategory");
     setClickedCategory(e.currentTarget.innerHTML);
   };
-
-  useEffect(() => {
-    console.log(clickedCategory);
-  }, [clickedCategory]);
-  
 
   return (
     <div className="slider">

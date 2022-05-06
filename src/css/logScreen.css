@@ -89,6 +89,10 @@ video {
   text-decoration: inherit;
 }
 
+button:disabled {
+  background-color: #adadad;
+}
+
 body {
   font-family: Nunito;
   background-color: #f2f2f2;
@@ -222,10 +226,6 @@ body {
   cursor: pointer;
 }
 
-#loginBlock button:disabled {
-  background-color: #adadad;
-}
-
 #girisYap {
   text-align: center;
   font-weight: bold;
@@ -335,6 +335,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .header img {
@@ -447,6 +451,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #525252;
+  width: 100%;
 }
 
 .productDetail .productDetails .detailHeader {
@@ -505,7 +510,7 @@ body {
 }
 
 .productDetail .productDetails .offeredPrice span:first-child {
-  color: #B1B1B1;
+  color: #b1b1b1;
 }
 
 .productDetail .productDetails .offeredPrice span:last-child {
@@ -579,9 +584,7 @@ body {
 
 .productDetail .productDetails .detailAbout .aboutDesc {
   width: 480px;
-  text-align: left;
   font: normal normal normal 15px/23px;
-  letter-spacing: 0px;
   color: #555555;
   opacity: 1;
 }
@@ -610,6 +613,18 @@ body {
   margin-left: 10px;
   font-size: 15px;
   font-weight: bold;
+}
+
+.userCard button {
+  margin-left: auto;
+  margin-right: 50px;
+  width: 86px;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  background-color: #f77474;
 }
 
 .offerTable {
@@ -1127,7 +1142,87 @@ body {
   font-size: 16px;
 }
 
-.absoluteBlueBackground {
+.productBuy {
+  -webkit-box-shadow: 0px 3px 12px #1e36482e;
+          box-shadow: 0px 3px 12px #1e36482e;
+  border-radius: 8px;
+  background-color: #ffffff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10vh;
+}
+
+.productBuy .buyHeader {
+  font: normal normal bold 25px/23px Nunito;
+  color: #525252;
+  margin-bottom: 12px;
+}
+
+.productBuy .buyDesc {
+  font: normal normal normal 15px/23px Nunito;
+  color: #555555;
+}
+
+.productBuy .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 20px;
+}
+
+.productBuy button {
+  width: 150px;
+  height: 45px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.productBuy button:first-of-type {
+  background-color: #f0f8ff;
+  font: normal normal bold 18px/24px Nunito;
+  color: #4b9ce2;
+}
+
+.productBuy button:last-of-type {
+  background-color: #4b9ce2;
+  font: normal normal bold 18px/24px Nunito;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.productBuy button:disabled {
+  background-color: #adadad;
+}
+
+.absoluteBlueBackgroundOffer {
   background-color: rgba(75, 156, 226, 0.7);
   height: 100vh;
   width: 100vw;
@@ -1141,6 +1236,52 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.absoluteBlueBackgroundBuy {
+  background-color: rgba(75, 156, 226, 0.7);
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 1860px) {
+  .cardGroup {
+    -ms-grid-columns: 280px 280px 280px 280px;
+        grid-template-columns: 280px 280px 280px 280px;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .cardGroup {
+    -ms-grid-columns: 280px 280px 280px;
+        grid-template-columns: 280px 280px 280px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .cardGroup {
+    -ms-grid-columns: 280px 280px;
+        grid-template-columns: 280px 280px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .cardGroup {
+    -ms-grid-columns: 280px;
+        grid-template-columns: 280px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -1168,9 +1309,6 @@ body {
   }
   #loginBlock button {
     margin-top: 0px;
-  }
-  #loginBlock button:disabled {
-    background-color: #adadad;
   }
   #girisYap {
     margin-top: 22px;
@@ -1228,35 +1366,12 @@ body {
   .header {
     height: 60px;
     padding: 10px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .header img {
     height: 30px;
-    width: auto;
-  }
-  .header .headerButton {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 10px 19px;
-    background-color: #f0f8ff;
-    border-radius: 8px;
-    margin-right: 10px;
-    max-height: 40px;
-  }
-  .header .headerButton:first-of-type {
-    margin-left: auto;
-  }
-  .header .headerButton:last-of-type {
-    margin-right: 0px;
-    margin-left: 10px;
-  }
-  .header .headerButton span {
-    margin-left: 7px;
   }
   .banner img {
-    margin: 0px 10px 20px 10px;
+    margin: 10px 10px 20px 10px;
     width: calc(100% - 20px);
   }
   .productDetail {
@@ -1274,21 +1389,11 @@ body {
             align-items: center;
   }
   .productDetail .productDetailImage img {
-    height: 100%;
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
   .productDetail .productDetails {
     margin-top: 10px;
     margin-left: 0px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     color: #525252;
     margin-bottom: 2px;
   }
@@ -1304,8 +1409,6 @@ body {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
-    display: -ms-inline-grid;
-    display: inline-grid;
     -ms-grid-columns: 145px 1fr;
         grid-template-columns: 145px 1fr;
     margin-bottom: 10px;
@@ -1322,34 +1425,15 @@ body {
     margin-bottom: 10px;
   }
   .productDetail .productDetails .detailButtons {
+    margin-top: 0px;
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;
-    height: 45px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     margin-bottom: 15px;
-    cursor: pointer;
     width: 100%;
   }
   .productDetail .productDetails .detailButtons .detailButton {
-    width: 100%;
     min-width: 0px;
-  }
-  .productDetail .productDetails .detailButtons .detailButton:first-child {
-    background-color: #4b9ce2;
-    color: #fff;
-    margin-right: 11px;
-  }
-  .productDetail .productDetails .detailButtons .detailButton:last-child {
-    background-color: #f0f8ff;
-    color: #4b9ce2;
-    margin-right: 0px;
   }
   .productDetail .productDetails .detailAbout {
     -webkit-box-ordinal-group: 6;
@@ -1358,18 +1442,114 @@ body {
   }
   .productDetail .productDetails .detailAbout .aboutHeader {
     margin-bottom: 0px;
+    width: 100%;
   }
   .productDetail .productDetails .detailAbout .aboutDesc {
-    width: auto;
+    width: 100%;
     text-align: left;
-    font: normal normal normal 15px/23px;
     letter-spacing: 0px;
-    color: #555555;
-    opacity: 1;
+  }
+  .userCard {
+    margin: 10px;
+    padding-right: 10px;
+  }
+  .userCard button {
+    margin-right: 0px;
+    width: auto;
+    height: 30px;
+    padding: 0px 10px;
+  }
+  .offerTable {
+    margin: 0px 10px 30px 10px;
+  }
+  .offerTable .offerSelection {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .offerTable .offerSelection span {
+    margin: 0px;
+    padding-bottom: 5px;
+    cursor: pointer;
+  }
+  .offerTable .offerCards {
+    margin: 0px;
+  }
+  .offerTable .offerCards .takenCards > div:first-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+  .offerTable .offerCards .takenCards > div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+  }
+  .offerTable .offerCards .takenCards {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-bottom: 20px;
+  }
+  .offerTable .offerCards .takenCards button {
+    margin-right: 0px;
+    width: calc(50% - 50px);
+  }
+  .offerTable .offerCards .takenCards button:last-of-type {
+    margin-right: 2px;
+    margin-left: 11px;
+  }
+  .offerTable .offerCards .takenCards .response {
+    margin-right: 5px;
+  }
+  .offerTable .offerCards .takenCards .response.granted.permission {
+    margin-left: 30px;
+  }
+  .offerTable .offerCards .takenCards .namePrice {
+    width: calc(100% - 90px);
+  }
+  .offerTable .offerCards .takenCards .namePrice .takenName {
+    width: 100%;
+  }
+  .offerTable .offerCards .takenCards .namePrice .takenPrice {
+    width: 100%;
   }
   .notVisibleMobile {
     display: none;
   }
+}
+
+.soldButton {
+  width: 235px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #fff0e2;
+  color: #faad60;
+  font-size: 18px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: not-allowed;
 }
 
 .switchButton input[type="checkbox"] {

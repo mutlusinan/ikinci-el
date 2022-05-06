@@ -1,13 +1,11 @@
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import closeButton from "../img/closeButton.png";
-import { useDropzone } from "react-dropzone";
 import "../css/DragUploader.css";
-
-import { StoreContext } from "../contexts/StoreContext.js";
+import { useNavigate } from "react-router-dom";
 
 function Newproduct() {
-  // const { clickedCategory, setClickedCategory } = useContext(StoreContext);
+  const navigate = useNavigate();
 
   const [categoryData, setCategoryData] = useState([]);
   const [brandData, setBrandData] = useState([]);
@@ -75,16 +73,13 @@ function Newproduct() {
       users_permissions_user: userInfo.user.id,
     };
     const form = new FormData();
-    form.append('data', JSON.stringify(productData));
+    form.append("data", JSON.stringify(productData));
     form.append("files.image", productImage);
 
     await axios
       .post("https://bootcamp.akbolat.net/products", form, config)
       .then((response) => {
-        console.log(response);
-        // localStorage.setItem("userInfo", JSON.stringify(response.data));
-        // setLoggedIn(true);
-        // navigate("/", { replace: true });
+        navigate(`/products/${response?.data?.id}`, { replace: false });
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -247,7 +242,6 @@ function Newproduct() {
                       type="file"
                       name="myImage"
                       onChange={(event) => {
-                        console.log(event.target.files);
                         setProductImage(event.target.files[0]);
                       }}
                     />

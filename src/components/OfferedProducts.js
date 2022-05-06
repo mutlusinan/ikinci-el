@@ -20,7 +20,6 @@ function OfferedProducts() {
       .get("https://bootcamp.akbolat.net/offers?_limit=2000", config)
       .then((response) => {
         setOfferDetail(response.data);
-        console.log(response.data);
       });
   }, []);
 
@@ -28,7 +27,6 @@ function OfferedProducts() {
     (offer) => offer?.product?.users_permissions_user === userInfo?.user?.id
   ).reverse();
 
-  console.log(offeredList);
 
   return (
     <>

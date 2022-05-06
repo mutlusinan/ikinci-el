@@ -5,30 +5,29 @@ import SelectedOffer from "../constants/SelectedOffer";
 import axios from "axios";
 
 function ProductOffer({ productDetail }) {
-
   const [offerPrice, setOfferPrice] = useState();
+  const [offerSelect, setOfferSelect] = useState(4);
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   const config = {
     headers: {
-      Authorization: `Bearer ${userInfo.jwt}`,
+      Authorization: `Bearer ${userInfo?.jwt}`,
     },
   };
 
-  async function sendOffer() {
-    await await axios
+  function sendOffer() {
+    axios
       .post(
         "https://bootcamp.akbolat.net/offers",
         {
-          product: productDetail.id,
-          users_permissions_user: userInfo.user.id,
+          product: productDetail?.id,
+          users_permissions_user: userInfo?.user?.id,
           offerPrice: offerPrice,
         },
         config
       )
       .then((response) => {
-        console.log(response);
         window.location.reload();
       })
       .catch((error) => {
@@ -40,35 +39,33 @@ function ProductOffer({ productDetail }) {
   const activeCategory = (e) => {
     document.querySelector("#selectedOption").removeAttribute("id");
     e.currentTarget.setAttribute("id", "selectedOption");
-    console.log(e.currentTarget.innerText);
     if (e.currentTarget.innerText === "%40’ı Kadar Teklif Ver") {
       setOfferPrice((productDetail.price * 40) / 100);
+      setOfferSelect(1);
     } else if (e.currentTarget.innerText === "%60’ı Kadar Teklif Ver") {
       setOfferPrice((productDetail.price * 60) / 100);
+      setOfferSelect(2);
     } else if (e.currentTarget.innerText === "%80’i Kadar Teklif Ver") {
       setOfferPrice((productDetail.price * 80) / 100);
+      setOfferSelect(3);
     } else {
-      
+      setOfferSelect(4);
     }
   };
-
-  
 
   function hideAndSeek(hide) {
     if (hide) {
       document
-        .querySelector(".absoluteBlueBackground")
+        .querySelector(".absoluteBlueBackgroundOffer")
         .classList.remove("hidden");
-      console.log(document.querySelector(".absoluteBlueBackground"));
     } else {
-      document.querySelector(".absoluteBlueBackground").classList.add("hidden");
-      console.log(document.querySelector(".absoluteBlueBackground"));
+      document.querySelector(".absoluteBlueBackgroundOffer").classList.add("hidden");
     }
   }
 
   return (
     <>
-      <div className="absoluteBlueBackground hidden">
+      <div className="absoluteBlueBackgroundOffer hidden">
         <div className="productOffer">
           <div className="productOfferHeader">
             <span className="productHeader">Teklif Ver</span>
@@ -79,7 +76,7 @@ function ProductOffer({ productDetail }) {
           <div className="smallProductCard">
             <img
               src={
-                productDetail.image === null
+                productDetail?.image === null
                   ? "https://picsum.photos/id/445/700/800?grayscale"
                   : "https://bootcamp.akbolat.net/" + productDetail.image?.url
               }
@@ -92,15 +89,17 @@ function ProductOffer({ productDetail }) {
           </div>
           <div className="offerSelect">
             <div className="offerSelectOption" onClick={activeCategory}>
-              <UnselectedOffer />
+              {offerSelect === 1 ? <SelectedOffer /> : <UnselectedOffer />}
               <span>%40’ı Kadar Teklif Ver</span>
             </div>
             <div className="offerSelectOption" onClick={activeCategory}>
-              <UnselectedOffer />
+              {offerSelect === 2 ? <SelectedOffer /> : <UnselectedOffer />}
+
               <span>%60’ı Kadar Teklif Ver</span>
             </div>
             <div className="offerSelectOption" onClick={activeCategory}>
-              <UnselectedOffer />
+              {offerSelect === 3 ? <SelectedOffer /> : <UnselectedOffer />}
+
               <span>%80’i Kadar Teklif Ver</span>
             </div>
             <div className="priceLess">
