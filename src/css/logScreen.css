@@ -685,6 +685,7 @@ body {
   font-size: 18px;
   color: #555;
   margin-bottom: 7px;
+  cursor: pointer;
 }
 
 .offerTable .offerCards .takenCards .namePrice .takenPrice {
@@ -918,6 +919,192 @@ body {
   border-radius: 0px;
   width: auto;
   font-family: Nunito;
+}
+
+.productOffer {
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 10vh;
+  width: 480px;
+  background-color: white;
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 3px 12px #1e36482e;
+          box-shadow: 0px 3px 12px #1e36482e;
+  border-radius: 10px;
+}
+
+.productOffer .productOfferHeader {
+  font: normal normal bold 25px/23px Nunito;
+  letter-spacing: 0px;
+  color: #525252;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.productOffer .productOfferHeader .closeButton {
+  cursor: pointer;
+}
+
+.productOffer .offerButton button {
+  width: 315px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #4b9ce2;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  font: normal normal bold 18px/24px Nunito;
+}
+
+.productOffer .closeButton {
+  margin-left: auto;
+}
+
+.productOffer .smallProductCard {
+  padding: 6px 11px 4px 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  margin-top: 17px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.productOffer .smallProductCard img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+}
+
+.productOffer .smallProductCard .smallProductName {
+  width: 140px;
+  color: #555555;
+  font: normal normal normal 13px/16px Nunito;
+  margin-left: 7px;
+}
+
+.productOffer .smallProductCard .smallProductPrice {
+  color: #525252;
+  font: normal normal bold 18px/32px Nunito;
+  margin-left: auto;
+}
+
+.productOffer .offerSelect {
+  width: 100%;
+}
+
+.productOffer .offerSelect #selectedOption {
+  background: #f0f8ff 0% 0% no-repeat padding-box;
+  border: 1px solid #4b9ce2;
+  outline: none !important;
+}
+
+.productOffer .offerSelect .offerSelectOption {
+  height: 45px;
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 13px 0px 12px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productOffer .offerSelect .offerSelectOption span {
+  font: normal normal normal 15px/20px Nunito;
+  color: #525252;
+  margin-left: 5px;
+}
+
+.productOffer .offerSelect .priceLess {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.productOffer .offerSelect .priceLess .paddin {
+  padding-right: 42px;
+}
+
+.productOffer .offerSelect .priceLess input {
+  margin-bottom: 20px;
+  background-color: #f4f4f4;
+  padding: 12px 0px 12px 15px;
+  font: normal normal normal 16px/22px Nunito;
+}
+
+.productOffer .offerSelect .priceLess .priceHelper {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  color: #99a0a7;
+  font-size: 16px;
+}
+
+.absoluteBlueBackground {
+  background-color: rgba(75, 156, 226, 0.7);
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media only screen and (max-width: 480px) {

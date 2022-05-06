@@ -1,16 +1,15 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 import Header from "../components/Header";
 import OfferedProducts from "../components/OfferedProducts";
 import OfferingProducts from "../components/OfferingProducts";
 import Usercard from "../components/Usercard";
-import { StoreContext } from "../contexts/StoreContext.js";
 
 function Mypage() {
   const [clickedOffer, setClickedOffer] = useState("Teklif Aldıklarım");
 
 
-  const storagedInfo = JSON.parse(localStorage.getItem("userInfo"));
+  
 
   const activeCategory = async (e) => {
     document.querySelector("#activeCategory").removeAttribute("id");

@@ -26,7 +26,9 @@ function OfferedProducts() {
 
   let offeredList = offerDetail?.filter(
     (offer) => offer?.product?.users_permissions_user === userInfo?.user?.id
-  );
+  ).reverse();
+
+  console.log(offeredList);
 
   return (
     <>
@@ -42,6 +44,7 @@ function OfferedProducts() {
           name={offer?.product?.name}
           offerPrice={offer?.offerPrice}
           offerID={offer?.id}
+          productID={offer?.product.id}
           token={userInfo.jwt}
           offerResult={offer?.isStatus}
           offerStatus="offered"

@@ -26,7 +26,10 @@ function OfferingProducts() {
 
   let offeringList = offerDetail?.filter(
     (offer) => offer?.users_permissions_user?.id === userInfo?.user?.id
-  );
+  ).reverse();
+
+
+  console.log(offeringList);
 
   return (
     <>
