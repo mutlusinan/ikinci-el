@@ -4,7 +4,7 @@ import axios from "axios";
 
 function Slider() {
 
-  const { clickedCategory, setClickedCategory } = useContext(StoreContext);
+  const { setClickedCategory } = useContext(StoreContext);
 
   const [categoryData, setCategoryData] = useState([]);
   const [categoryLoad, setCategoryLoad] = useState(false);

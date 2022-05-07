@@ -34,6 +34,7 @@ function MyProducts() {
     {myProducts.length === 0 && <DummyListed offerStatus="myproducts" />}
       {myProducts.map((offer) => (
         
+        
         <ListedProducts
           key={offer.id}
           img={

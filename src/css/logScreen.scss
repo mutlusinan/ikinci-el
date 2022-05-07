@@ -135,14 +135,26 @@ body {
   display: block;
 }
 
+.loginValidation {
+  color: #f77474;
+  font-size: 12px;
+}
+
+
 .loginInput {
   width: 80%;
   margin-bottom: 15px;
-
   p {
     font-size: 15px;
     letter-spacing: 0px;
     margin-bottom: 5px;
+  }
+
+  input:focus {
+    outline: none;
+    border: #4b9ce2 1px solid;
+    border-color: #4b9ce2;
+    background-color: #f0f8ff;
   }
 
   input {
@@ -153,15 +165,8 @@ body {
     height: 45px;
     display: block;
     padding: 0px 15px;
-
     box-sizing: border-box;
-  }
-
-  input:focus {
-    outline: none !important;
-    border: #4b9ce2 1px solid;
-    border-color: #4b9ce2;
-    background-color: #f0f8ff;
+    
   }
 
   a {
@@ -252,6 +257,10 @@ body {
     object-fit: cover;
     object-position: center top;
     border-radius: 8px;
+    transition: transform 0.1s ease;
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   .brandColor {
@@ -697,19 +706,15 @@ body {
       display: block;
     }
   }
-
   .addProduct {
     display: flex;
-    flex: row;
   }
-
   .addProductLeft {
     box-sizing: border-box;
     border-right: 1px solid #f2f2f2;
     padding-right: 48px;
     width: 60%;
   }
-
   .addProductRight {
     box-sizing: border-box;
     padding-left: 48px;
@@ -719,23 +724,19 @@ body {
     width: 40%;
   }
 }
-
 .addProductDetailsHeader {
   font-weight: bold;
   font-size: 25px;
   color: #525252;
 }
-
 .addProductDetails {
   font: normal normal normal 15px/20px Nunito;
   letter-spacing: 0px;
   color: #525252;
 }
-
 .inputName {
   height: 45px;
 }
-
 .inputDesc {
   height: 92px;
   resize: none;
@@ -746,13 +747,11 @@ body {
   width: 100%;
   font: normal normal normal 16px/22px Nunito;
 }
-
 .formGrid {
   display: grid;
   column-gap: 24px;
   grid-template-columns: 1fr 1fr;
 }
-
 .priceLess {
   position: relative;
   display: inline-block;
@@ -769,7 +768,6 @@ body {
   color: #99a0a7;
   font-size: 16px;
 }
-
 .switchButton {
   display: flex;
   flex-direction: row;
@@ -781,7 +779,6 @@ body {
   font: normal normal normal 16px/22px Nunito;
   color: #b1b1b1;
 }
-
 .uploadedImage {
   width: 113px;
   height: 113px;
@@ -789,7 +786,6 @@ body {
   object-position: center top;
   cursor: pointer;
 }
-
 .removeBtn {
   width: 18px;
   height: 18px;
@@ -797,7 +793,6 @@ body {
   margin-left: 103px;
   margin-top: -9px;
 }
-
 .addImage {
   input {
     font-size: 16px;
@@ -808,7 +803,6 @@ body {
     font-family: Nunito;
   }
 }
-
 .productOffer {
   padding: 20px;
   box-sizing: border-box;
@@ -862,7 +856,6 @@ body {
     flex-direction: row;
     align-items: center;
     width: 100%;
-
     img {
       width: 50px;
       height: 50px;
@@ -870,14 +863,12 @@ body {
       object-fit: cover;
       object-position: center top;
     }
-
     .smallProductName {
       width: 140px;
       color: #555555;
       font: normal normal normal 13px/16px Nunito;
       margin-left: 7px;
     }
-
     .smallProductPrice {
       color: #525252;
       font: normal normal bold 18px/32px Nunito;
@@ -983,8 +974,8 @@ body {
 }
 .absoluteBlueBackgroundOffer {
   background-color: rgba(75, 156, 226, 0.7);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   position: absolute;
   justify-content: center;
@@ -992,12 +983,15 @@ body {
 }
 .absoluteBlueBackgroundBuy {
   background-color: rgba(75, 156, 226, 0.7);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
+}
+#file-upload-button {
+  background-color: red;
 }
 
 @media only screen and (max-width: 1860px) {
@@ -1236,9 +1230,83 @@ body {
       }
     }
   }
+  .addProductCard {
+    margin: 16px 10px;
+    padding: 0px 10px 16px 10px;
+    .addForm {
+      p {
+        margin-top: 15px;
+      }
+      select {
+        height: 45px;
+      }
+      button {
+        margin-top: 25px;
+        margin-left: 0px;
+        width: auto;
+      }
+    }
+    .addProduct {
+      flex-direction: column;
+    }
+    .addProductLeft {
+      border-right: none;
+      padding-right: 0px;
+      width: 100%;
+    }
+    .addProductRight {
+      padding-left: 0px;
+      width: 100%;
+    }
+  }
+  .addProductDetailsHeader {
+    font-weight: bold;
+    font-size: 25px;
+    color: #525252;
+  }
+  .formGrid {
+    display: grid;
+    column-gap: 0px;
+    grid-template-columns: 1fr;
+  }
+  .priceInput {
+    padding-right: auto;
+    width: 100%;
+    height: 45px;
+  }
+  .switchBtn {
+    margin-right: auto;
+    margin-top: 11px;
+    margin-bottom: -5px;
+    font: normal normal normal 16px/22px Nunito;
+    color: #b1b1b1;
+  }
+  .absoluteBlueBackgroundOffer {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+  }
+  .absoluteBlueBackgroundBuy {
+    background-color: rgba(75, 156, 226, 0.7);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+  }
   .notVisibleMobile {
     display: none;
   }
+}
+
+*.inputError {
+  outline: none !important;
+  border: #f77474 1px solid !important;
+  border-color: #f77474 !important;
+  background-color: #fff2f2 !important;
 }
 .soldButton {
   width: 235px;
@@ -1253,14 +1321,12 @@ body {
   align-items: center;
   cursor: not-allowed;
 }
-
 .switchButton {
   input[type="checkbox"] {
     height: 0;
     width: 0;
     visibility: hidden;
   }
-
   label {
     cursor: pointer;
     text-indent: -9999px;
@@ -1271,7 +1337,6 @@ body {
     border-radius: 100px;
     position: relative;
   }
-
   label:after {
     content: "";
     position: absolute;
@@ -1284,11 +1349,9 @@ body {
     transition: 0.3s;
     box-shadow: 0px 2px 4px #1e36482e;
   }
-
   input:checked + label {
     background: #4b9ce2;
   }
-
   input:checked + label:after {
     left: calc(100% - 2px);
     transform: translateX(-100%);
@@ -1298,11 +1361,9 @@ body {
     width: 20px;
   }
 }
-
 #activeCategory {
   border-bottom: 3px solid #4b9ce2;
 }
-
 .hidden {
   visibility: hidden;
 }

@@ -40,13 +40,13 @@ function ProductOffer({ productDetail }) {
     document.querySelector("#selectedOption").removeAttribute("id");
     e.currentTarget.setAttribute("id", "selectedOption");
     if (e.currentTarget.innerText === "%40’ı Kadar Teklif Ver") {
-      setOfferPrice((productDetail.price * 40) / 100);
+      setOfferPrice(Math.round(productDetail.price * 40) / 100);
       setOfferSelect(1);
     } else if (e.currentTarget.innerText === "%60’ı Kadar Teklif Ver") {
-      setOfferPrice((productDetail.price * 60) / 100);
+      setOfferPrice(Math.round(productDetail.price * 60) / 100);
       setOfferSelect(2);
     } else if (e.currentTarget.innerText === "%80’i Kadar Teklif Ver") {
-      setOfferPrice((productDetail.price * 80) / 100);
+      setOfferPrice(Math.round(productDetail.price * 80) / 100);
       setOfferSelect(3);
     } else {
       setOfferSelect(4);

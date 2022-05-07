@@ -1,54 +1,41 @@
-import { useEffect, useState } from "react";
-import logo from "../img/loginLogo.png";
-
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { Formik, ErrorMessage } from "formik";
 import axios from "axios";
-
-import { ToastContainer, toast } from "react-toastify";
+import clsx from "clsx";
 
 import "react-toastify/dist/ReactToastify.css";
+import logo from "../img/loginLogo.png";
 
-const notify = () =>
-  toast.error("Hatalı giriş.", {
-    position: "top-right",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
+import { SigninSchema } from "../constants/yupSchema";
+import { signinErrorNotify } from "../constants/toastrNotify";
 
 function SigninComp() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function signin(email, password) {
     setLoading(true);
-
+    console.log(email);
+    console.log(password);
+    console.log(email.split("@")[0]);
     await axios
       .post("https://bootcamp.akbolat.net/auth/local/register", {
         email: email,
         password: password,
-        username: username,
+        username: email.split("@")[0],
       })
       .then((response) => {
         localStorage.setItem("userInfo", JSON.stringify(response.data));
         navigate("/", { replace: false });
       })
       .catch((error) => {
-        notify();
+        signinErrorNotify();
+        console.log(error);
       })
       .finally(setLoading(false));
   }
-
-  useEffect(() => {
-    setUsername(email.split("@")[0]);
-  }, [email, password]);
 
   return (
     <>
@@ -65,36 +52,59 @@ function SigninComp() {
       />
       <div id="loginRight">
         <img src={logo} alt="logo" id="loginLogo" />
-        <form id="loginBlock" onSubmit={handleSubmit}>
-          <div>
-            <div id="girisYap">Üye Ol</div>
-            <div id="girisAlt">Fırsatlardan yararlanmak için üye ol!</div>
-          </div>
-          <div className="loginInput">
-            <p>Email</p>
-            <input
-              type="email"
-              placeholder="Email@example.com"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-            <div></div>
-          </div>
-          <div className="loginInput">
-            <p>Şifre</p>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-          </div>
-          <button type="submit" disabled={loading}>
-            {loading ? "Yükleniyor" : "Üye Ol"}
-          </button>
-          <div id="loginDirectly">
-            Hesabın var mı? <Link to="/login">Giriş Yap</Link>
-          </div>
-        </form>
+        <Formik
+          initialValues={{
+            email: "",
+            password: "",
+          }}
+          onSubmit={(auth) => {
+            signin(auth.email, auth.password);
+          }}
+          validationSchema={SigninSchema}
+          validateOnChange={false}
+        >
+          {({ values, handleChange, handleSubmit, errors }) => (
+            <form id="loginBlock" onSubmit={handleSubmit}>
+              <div>
+                <div id="girisYap">Üye Ol</div>
+                <div id="girisAlt">Fırsatlardan yararlanmak için üye ol!</div>
+              </div>
+              <div className="loginInput">
+                <p>Email</p>
+                <input
+                  className={clsx({ inputError: !!errors.email })}
+                  type="email"
+                  placeholder="Email@example.com"
+                  onChange={handleChange}
+                  value={values.email}
+                  name="email"
+                />
+                <div className="loginValidation">
+                  <ErrorMessage name="email" />
+                </div>
+              </div>
+              <div className="loginInput">
+                <p>Şifre</p>
+                <input
+                  className={clsx({ inputError: !!errors.password })}
+                  type="password"
+                  onChange={handleChange}
+                  value={values.password}
+                  name="password"
+                />
+                <div className="loginValidation">
+                  <ErrorMessage name="password" />
+                </div>
+              </div>
+              <button type="submit" disabled={loading}>
+                {loading ? "Yükleniyor" : "Üye Ol"}
+              </button>
+              <div id="loginDirectly">
+                Hesabın var mı? <Link to="/login">Giriş Yap</Link>
+              </div>
+            </form>
+          )}
+        </Formik>
       </div>
     </>
   );

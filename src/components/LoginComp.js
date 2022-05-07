@@ -1,36 +1,25 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-
-import logo from "../img/loginLogo.png";
 import { Link, useNavigate } from "react-router-dom";
-
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { Formik, ErrorMessage } from "formik";
+import axios from "axios";
+import clsx from "clsx";
 
 import "react-toastify/dist/ReactToastify.css";
+import logo from "../img/loginLogo.png";
 
-const notify = () =>
-  toast.error("Hatalı giriş.", {
-    position: "top-right",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
+import { LoginSchema } from "../constants/yupSchema";
+import { loginErrorNotify } from "../constants/toastrNotify";
 
 function LoginComp() {
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function login(email, password) {
     setLoading(true);
 
-    const { data } = await axios
+    await axios
       .post("https://bootcamp.akbolat.net/auth/local", {
         identifier: email,
         password: password,
@@ -41,15 +30,10 @@ function LoginComp() {
         navigate("/", { replace: false });
       })
       .catch((error) => {
-        notify();
+        loginErrorNotify();
       })
       .finally(setLoading(false));
   }
-
-  useEffect(() => {
-    if (loggedIn) {
-    }
-  }, [loggedIn]);
 
   return (
     <>
@@ -63,43 +47,67 @@ function LoginComp() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        
       />
+
       <div id="loginRight">
         <img src={logo} alt="logo" id="loginLogo" />
-        <form id="loginBlock" onSubmit={handleSubmit}>
-          <div>
-            <div id="girisYap">Giriş Yap</div>
-            <div id="girisAlt">Fırsatlardan yararlanmak için giriş yap!</div>
-          </div>
-          <div className="loginInput">
-            <p>Email</p>
-            <input
-              type="email"
-              placeholder="Email@example.com"
-              name="identifier"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-            <div></div>
-          </div>
-          <div className="loginInput">
-            <p>Şifre</p>
-            <input
-              type="password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-            <a href="/">Şifremi Unuttum</a>
-          </div>
-          <button type="submit" disabled={loading}>
-            {loading ? "Yükleniyor" : "Giriş"}
-          </button>
-          <div id="loginDirectly">
-            Hesabın yok mu? <Link to="/signin">Üye Ol</Link>
-          </div>
-        </form>
+        <Formik
+          initialValues={{
+            identifier: "",
+            password: "",
+          }}
+          onSubmit={(auth) => {
+            login(auth.identifier, auth.password);
+          }}
+          validationSchema={LoginSchema}
+          validateOnChange={false}
+        >
+          {({ values, handleChange, handleSubmit, errors }) => (
+            <form id="loginBlock" onSubmit={handleSubmit}>
+              <div>
+                <div id="girisYap">Giriş Yap</div>
+                <div id="girisAlt">
+                  Fırsatlardan yararlanmak için giriş yap!
+                </div>
+              </div>
+              <div className="loginInput">
+                <p>Email</p>
+                <input
+                  className={clsx({ inputError: !!errors.identifier })}
+                  type="email"
+                  placeholder="Email@example.com"
+                  name="identifier"
+                  onChange={handleChange}
+                  value={values.identifier}
+                />
+                <div className="loginValidation">
+                  <ErrorMessage name="identifier" />
+                </div>
+              </div>
+              <div className="loginInput">
+                <p>Şifre</p>
+                <input
+                  className={clsx({ inputError: !!errors.password })}
+                  type="password"
+                  name="password"
+                  onChange={handleChange}
+                  value={values.password}
+                />
+                <div className="loginValidation">
+                  <ErrorMessage name="password" />
+                </div>
+
+                <a href="/">Şifremi Unuttum</a>
+              </div>
+              <button type="submit" disabled={loading}>
+                {loading ? "Yükleniyor" : "Giriş"}
+              </button>
+              <div id="loginDirectly">
+                Hesabın yok mu? <Link to="/signin">Üye Ol</Link>
+              </div>
+            </form>
+          )}
+        </Formik>
       </div>
     </>
   );

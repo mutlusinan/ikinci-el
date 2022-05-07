@@ -152,6 +152,11 @@ body {
   display: block;
 }
 
+.loginValidation {
+  color: #f77474;
+  font-size: 12px;
+}
+
 .loginInput {
   width: 80%;
   margin-bottom: 15px;
@@ -161,6 +166,13 @@ body {
   font-size: 15px;
   letter-spacing: 0px;
   margin-bottom: 5px;
+}
+
+.loginInput input:focus {
+  outline: none;
+  border: #4b9ce2 1px solid;
+  border-color: #4b9ce2;
+  background-color: #f0f8ff;
 }
 
 .loginInput input {
@@ -173,13 +185,6 @@ body {
   padding: 0px 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.loginInput input:focus {
-  outline: none !important;
-  border: #4b9ce2 1px solid;
-  border-color: #4b9ce2;
-  background-color: #f0f8ff;
 }
 
 .loginInput a {
@@ -292,6 +297,15 @@ body {
   -o-object-position: center top;
      object-position: center top;
   border-radius: 8px;
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+}
+
+.productCard img:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .productCard .brandColor {
@@ -839,9 +853,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row;
-      -ms-flex: row;
-          flex: row;
 }
 
 .addProductCard .addProductLeft {
@@ -1224,8 +1235,8 @@ body {
 
 .absoluteBlueBackgroundOffer {
   background-color: rgba(75, 156, 226, 0.7);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1240,8 +1251,8 @@ body {
 
 .absoluteBlueBackgroundBuy {
   background-color: rgba(75, 156, 226, 0.7);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1252,6 +1263,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#file-upload-button {
+  background-color: red;
 }
 
 @media only screen and (max-width: 1860px) {
@@ -1527,9 +1542,99 @@ body {
   .offerTable .offerCards .takenCards .namePrice .takenPrice {
     width: 100%;
   }
+  .addProductCard {
+    margin: 16px 10px;
+    padding: 0px 10px 16px 10px;
+  }
+  .addProductCard .addForm p {
+    margin-top: 15px;
+  }
+  .addProductCard .addForm select {
+    height: 45px;
+  }
+  .addProductCard .addForm button {
+    margin-top: 25px;
+    margin-left: 0px;
+    width: auto;
+  }
+  .addProductCard .addProduct {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .addProductCard .addProductLeft {
+    border-right: none;
+    padding-right: 0px;
+    width: 100%;
+  }
+  .addProductCard .addProductRight {
+    padding-left: 0px;
+    width: 100%;
+  }
+  .addProductDetailsHeader {
+    font-weight: bold;
+    font-size: 25px;
+    color: #525252;
+  }
+  .formGrid {
+    display: -ms-grid;
+    display: grid;
+    -webkit-column-gap: 0px;
+            column-gap: 0px;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .priceInput {
+    padding-right: auto;
+    width: 100%;
+    height: 45px;
+  }
+  .switchBtn {
+    margin-right: auto;
+    margin-top: 11px;
+    margin-bottom: -5px;
+    font: normal normal normal 16px/22px Nunito;
+    color: #b1b1b1;
+  }
+  .absoluteBlueBackgroundOffer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .absoluteBlueBackgroundBuy {
+    background-color: rgba(75, 156, 226, 0.7);
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .notVisibleMobile {
     display: none;
   }
+}
+
+*.inputError {
+  outline: none !important;
+  border: #f77474 1px solid !important;
+  border-color: #f77474 !important;
+  background-color: #fff2f2 !important;
 }
 
 .soldButton {

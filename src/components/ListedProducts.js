@@ -18,7 +18,7 @@ function ListedProducts(props) {
         { isStatus: yaynay },
         config
       )
-      .then((response) => {
+      .then((response) => {window.location.reload();
       });
   }
 
@@ -29,7 +29,7 @@ function ListedProducts(props) {
         { isSold: true },
         config
       )
-      .then((response) => {
+      .then((response) => {window.location.reload();
       });
   }
 

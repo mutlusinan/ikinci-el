@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "../img/loginLogo.png";
 import Plus from "../constants/Plus.js";
 import Dude from "../constants/Dude.js";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 function Header() {
   const navigate = useNavigate();
@@ -25,9 +25,11 @@ function Header() {
   return (
     <>
       <div className="header">
-        <Link to="/">
-          <img src={logo} alt="logo"></img>
-        </Link>
+        <img
+          src={logo}
+          alt="logo"
+          onClick={() => navigate("/", { replace: false })}
+        />
 
         <span
           className="headerButton firstItem"
