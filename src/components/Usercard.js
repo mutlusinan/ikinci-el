@@ -17,7 +17,7 @@ function Usercard() {
         <button
           onClick={() => {
             localStorage.removeItem("userInfo");
-            navigate("/", { replace: false });
+            navigate("/");
           }}
         >
           Çıkış Yap

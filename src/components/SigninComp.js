@@ -28,7 +28,7 @@ function SigninComp() {
       })
       .then((response) => {
         localStorage.setItem("userInfo", JSON.stringify(response.data));
-        navigate("/", { replace: false });
+        navigate("/");
       })
       .catch((error) => {
         signinErrorNotify();

@@ -27,7 +27,7 @@ function LoginComp() {
       .then((response) => {
         localStorage.setItem("userInfo", JSON.stringify(response.data));
         setLoggedIn(true);
-        navigate("/", { replace: false });
+        navigate("/");
       })
       .catch((error) => {
         loginErrorNotify();

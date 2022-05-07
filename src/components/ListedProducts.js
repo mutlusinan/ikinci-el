@@ -39,7 +39,7 @@ function ListedProducts(props) {
         <div className="takenCards">
           <img className="" src={props.img} alt="product" />
           <span className="namePrice">
-            <span className="takenName" onClick={()=> navigate("/products/"+props.productID, { replace: false })}>{props.name}</span>
+            <span className="takenName" onClick={()=> navigate("/products/"+props.productID)}>{props.name}</span>
             <span className="takenPrice">
               <span className="first">{(props.offerStatus==="myproduct") ? "Ürün fiyatı" : "Alınan Teklif"}</span>
               <span className="second">{props.offerPrice} TL</span>

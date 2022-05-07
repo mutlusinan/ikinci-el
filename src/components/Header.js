@@ -10,9 +10,9 @@ function Header() {
 
   function loginOrSignin(loggedIn) {
     if (loggedIn) {
-      navigate("/myPage", { replace: false });
+      navigate("/myPage");
     } else {
-      navigate("/login", { replace: false });
+      navigate("/login");
     }
   }
 
@@ -28,15 +28,15 @@ function Header() {
         <img
           src={logo}
           alt="logo"
-          onClick={() => navigate("/", { replace: false })}
+          onClick={() => navigate("/")}
         />
 
         <span
           className="headerButton firstItem"
           onClick={
             loggedIn
-              ? () => navigate("/addproduct", { replace: false })
-              : () => navigate("/signin", { replace: false })
+              ? () => navigate("/addproduct")
+              : () => navigate("/signin")
           }
         >
           <Plus />

@@ -23,7 +23,6 @@ function ProductBuy({ productDetail }) {
       )
       .then(() => {
         setLoading(true);
-        alert("Selam");
         window.location.reload();
       })
       .finally(() => {

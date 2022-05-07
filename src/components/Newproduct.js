@@ -59,7 +59,7 @@ function Newproduct() {
     await axios
       .post("https://bootcamp.akbolat.net/products", form, config)
       .then((response) => {
-        navigate(`/products/${response?.data?.id}`, { replace: false });
+        navigate(`/products/${response?.data?.id}`);
       })
       .catch((error) => {
         console.log(error.response);
