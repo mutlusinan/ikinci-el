@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function ProductBuy({ productDetail, setIsSold }) {
-  const [loading, setLoading] = useState(false);
+import { buySuccessNotify } from "../../constants/toastifyNotify";
 
+function ProductBuy({ productDetail, setIsSold }) {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   const config = {
@@ -13,21 +13,15 @@ function ProductBuy({ productDetail, setIsSold }) {
   };
 
   async function buyProduct() {
-    setLoading(true);
-
     await axios
       .put(
         `https://bootcamp.akbolat.net/products/${productDetail.id}`,
         { isSold: true },
         config
       )
-      .then(() => {
-        setIsSold(true);
-      })
+      .then(setIsSold(true))
       .then(hideAndSeek())
-      .finally(() => {
-        setLoading(false);
-      });
+      .then(buySuccessNotify());
   }
 
   function hideAndSeek() {
@@ -43,12 +37,8 @@ function ProductBuy({ productDetail, setIsSold }) {
           <p className="buyHeader">Satın Al</p>
           <p className="buyDesc">Satın Almak istiyor musunuz?</p>
           <div className="buttons">
-            <button onClick={() => hideAndSeek()} disabled={loading}>
-              Vazgeç
-            </button>
-            <button onClick={() => buyProduct()} disabled={loading}>
-              Satın Al
-            </button>
+            <button onClick={() => hideAndSeek()}>Vazgeç</button>
+            <button onClick={() => buyProduct()}>Satın Al</button>
           </div>
         </div>
       </div>

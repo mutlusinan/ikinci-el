@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { Slide, ToastContainer } from "react-toastify";
 import { Formik, ErrorMessage } from "formik";
 import axios from "axios";
 import clsx from "clsx";
@@ -49,6 +49,7 @@ function SigninComp() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        transition={Slide}
       />
       <div id="loginRight">
         <img src={logo} alt="logo" id="loginLogo" />

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { Slide, ToastContainer } from "react-toastify";
 import { Formik, ErrorMessage } from "formik";
 import axios from "axios";
 import clsx from "clsx";
 
 import "react-toastify/dist/ReactToastify.css";
+import "../../css/toastifyStyle.css"
 import logo from "../../img/loginLogo.png";
 
 import { LoginSchema } from "../../constants/yupSchema";
@@ -13,7 +14,6 @@ import { loginErrorNotify } from "../../constants/toastifyNotify";
 
 function LoginComp() {
   const navigate = useNavigate();
-  const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
 
   async function login(email, password) {
@@ -26,7 +26,6 @@ function LoginComp() {
       })
       .then((response) => {
         localStorage.setItem("userInfo", JSON.stringify(response.data));
-        setLoggedIn(true);
         navigate("/");
       })
       .catch((error) => {
@@ -47,6 +46,7 @@ function LoginComp() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        transition={Slide}
       />
 
       <div id="loginRight">

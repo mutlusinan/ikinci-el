@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+:root {
+  --toastify-font-family: Nunito;
+  --toastify-toast-width: 320px !important;
+}
+
+.errorToast {
+  background-color: #ffe5e5;
+  color: #f77474;
+}
+
+.successToast {
+  background-color: #f1fff0;
+  color: #46af32;
+}
+
+@media only screen and (max-width: 480px) {
+  .Toastify__toast-container {
+    margin: 0px 10px;
+    width: calc(100vw - 20px);
+  }
+}

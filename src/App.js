@@ -1,5 +1,6 @@
 
 import "./css/logScreen.css";
+
 import React from "react";
 import { StoreProvider } from "./contexts/StoreContext.js";
 import Router from "./router/router.js";

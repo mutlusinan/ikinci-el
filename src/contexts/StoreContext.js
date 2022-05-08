@@ -1,9 +1,22 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const StoreContext = createContext();
 
 const StoreProvider = ({ children }) => {
-  return <StoreContext.Provider value={{}}>{children}</StoreContext.Provider>;
-};
+  const [isSold, setIsSold] = useState(null);
+  const [contextProductId, setContextProductId] = useState(null);
 
+  return (
+    <StoreContext.Provider
+      value={{
+        isSold,
+        setIsSold,
+        contextProductId,
+        setContextProductId
+      }}
+    >
+      {children}
+    </StoreContext.Provider>
+  );
+};
 export { StoreContext, StoreProvider };
