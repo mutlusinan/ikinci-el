@@ -14,10 +14,8 @@ import { loginErrorNotify } from "../../constants/toastifyNotify";
 
 function LoginComp() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
 
   async function login(email, password) {
-    setLoading(true);
 
     await axios
       .post("https://bootcamp.akbolat.net/auth/local", {
@@ -31,7 +29,6 @@ function LoginComp() {
       .catch((error) => {
         loginErrorNotify();
       })
-      .finally(setLoading(false));
   }
 
   return (
@@ -99,8 +96,8 @@ function LoginComp() {
 
                 <a href="/">Şifremi Unuttum</a>
               </div>
-              <button type="submit" disabled={loading}>
-                {loading ? "Yükleniyor" : "Giriş"}
+              <button type="submit">
+                Giriş
               </button>
               <div id="loginDirectly">
                 Hesabın yok mu? <Link to="/signin">Üye Ol</Link>

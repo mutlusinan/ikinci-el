@@ -140,7 +140,6 @@ body {
   font-size: 12px;
 }
 
-
 .loginInput {
   width: 80%;
   margin-bottom: 15px;
@@ -166,7 +165,6 @@ body {
     display: block;
     padding: 0px 15px;
     box-sizing: border-box;
-    
   }
 
   a {
@@ -679,10 +677,13 @@ body {
     input,
     select {
       font-size: 16px;
-      border: none;
+      border: #f4f4f4 1px solid;
       background: #f4f4f4 0% 0% no-repeat padding-box;
       border-radius: 8px;
       width: 100%;
+    }
+    textarea {
+      border: #f4f4f4 1px solid;
     }
     p {
       margin-top: 25px;
@@ -714,6 +715,14 @@ body {
     border-right: 1px solid #f2f2f2;
     padding-right: 48px;
     width: 60%;
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border: #4b9ce2 1px solid;
+      border-color: #4b9ce2;
+      background-color: #f0f8ff;
+    }
   }
   .addProductRight {
     box-sizing: border-box;
@@ -1282,11 +1291,7 @@ body {
     color: #b1b1b1;
   }
   .absoluteBlueBackgroundOffer {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
   }
   .absoluteBlueBackgroundBuy {
     background-color: rgba(75, 156, 226, 0.7);

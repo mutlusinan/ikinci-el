@@ -1,5 +1,5 @@
 
-import "./css/logScreen.css";
+import "./css/style.css";
 
 import React from "react";
 import { StoreProvider } from "./contexts/StoreContext.js";

@@ -13,13 +13,8 @@ import { signinErrorNotify } from "../../constants/toastifyNotify";
 
 function SigninComp() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
 
   async function signin(email, password) {
-    setLoading(true);
-    console.log(email);
-    console.log(password);
-    console.log(email.split("@")[0]);
     await axios
       .post("https://bootcamp.akbolat.net/auth/local/register", {
         email: email,
@@ -33,8 +28,7 @@ function SigninComp() {
       .catch((error) => {
         signinErrorNotify();
         console.log(error);
-      })
-      .finally(setLoading(false));
+      });
   }
 
   return (
@@ -97,8 +91,8 @@ function SigninComp() {
                   <ErrorMessage name="password" />
                 </div>
               </div>
-              <button type="submit" disabled={loading}>
-                {loading ? "Yükleniyor" : "Üye Ol"}
+              <button type="submit">
+                Üye Ol
               </button>
               <div id="loginDirectly">
                 Hesabın var mı? <Link to="/login">Giriş Yap</Link>

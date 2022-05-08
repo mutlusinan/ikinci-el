@@ -14,7 +14,6 @@ function Newproduct() {
   const [brandData, setBrandData] = useState([]);
   const [colorData, setColorData] = useState([]);
   const [usingData, setUsingData] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   const [productImage, setProductImage] = useState("");
 
@@ -39,7 +38,6 @@ function Newproduct() {
   }, []);
 
   async function postProduct(auth) {
-    setLoading(true);
     const userData = {
       users_permissions_user: userInfo.user.id,
     };
@@ -62,7 +60,6 @@ function Newproduct() {
       })
       .catch((error) => {
         console.log(error.response);
-        setLoading(false);
       });
   }
 
@@ -268,7 +265,7 @@ function Newproduct() {
                 </div>
               </div>
               <button className="productSendButton" type="submit">
-                {loading ? "Ekleniyor" : "Kaydet"}
+                Kaydet
               </button>
             </form>
           )}

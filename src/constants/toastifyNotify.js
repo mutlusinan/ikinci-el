@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 
 
 export const loginErrorNotify = () =>
-  toast.error("Hatalı giriş.", {
+  toast.error("Emailiniz veya şifreniz hatalı.", {
     position: "top-right",
     autoClose: 3000,
     hideProgressBar: true,

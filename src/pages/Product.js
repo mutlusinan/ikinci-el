@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+
 import Header from "../components/Common/Header";
 import ProductPage from "../components/ProductPage";
-import { useParams } from "react-router-dom";
 import ProductOffer from "../components/ProductOffer";
 import ProductBuy from "../components/Common/ProductBuy";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 function Product() {
   const navigate = useNavigate();

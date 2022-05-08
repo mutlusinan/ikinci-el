@@ -29,7 +29,6 @@ function ProductOffer({ productDetail, setYourOffers }) {
       )
       .then((response) => {
         setYourOffers([response.data]);
-        console.log(response.data);
         hideAndSeek(false);
       })
       .catch((error) => {
