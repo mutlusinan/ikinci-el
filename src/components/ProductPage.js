@@ -1,12 +1,33 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function ProductPage({ productDetail }) {
+function ProductPage({
+  productDetail,
+  setIsSold,
+  isSold,
+  yourOffers,
+  setYourOffers,
+}) {
+  const navigate = useNavigate();
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
-  const yourOffers = productDetail?.offers?.filter(
-    (offer) => offer?.users_permissions_user === userInfo?.user?.id
-  );
+  useEffect(() => {
+    setIsSold(productDetail.isSold);
+    if (
+      !!productDetail?.offers?.filter(
+        (offer) => offer?.users_permissions_user === userInfo?.user?.id
+      )
+    ) {
+      setYourOffers(
+        productDetail?.offers?.filter(
+          (offer) => offer?.users_permissions_user === userInfo?.user?.id
+        )
+      );
+    }
+  }, [productDetail]);
+
+  useEffect(() => {}, [yourOffers]);
 
   function hideBuy() {
     document
@@ -36,12 +57,12 @@ function ProductPage({ productDetail }) {
     await axios
       .delete(`https://bootcamp.akbolat.net/offers/${yourOffers[0].id}`, config)
       .then((response) => {
-        window.location.reload();
+        setIsSold(response.data.product.isSold);
+        setYourOffers([]);
       })
       .catch((error) => {
         console.log(error);
       })
-      .finally();
   }
 
   return (
@@ -50,9 +71,9 @@ function ProductPage({ productDetail }) {
         <div className="productDetailImage">
           <img
             src={
-              productDetail?.image === null
+              (productDetail?.image?.url===undefined && !productDetail?.image)
                 ? "https://picsum.photos/id/445/700/800?grayscale"
-                : "https://bootcamp.akbolat.net/" + productDetail.image?.url
+                : "https://bootcamp.akbolat.net/" + productDetail?.image?.url
             }
             alt="lady"
           />
@@ -76,21 +97,33 @@ function ProductPage({ productDetail }) {
           )}
 
           <div className="detailButtons">
-            {productDetail?.isSold && (
+            {isSold && (
               <span className="soldButton">Bu Ürün Satışta Değil</span>
             )}
-            {!productDetail?.isSold && (
-              <span className="detailButton" onClick={() => hideBuy()}>
+            {!isSold && (
+              <span
+                className="detailButton"
+                onClick={
+                  !!userInfo ? () => hideBuy() : () => navigate(`/login`)
+                }
+              >
                 <span>Satın Al</span>
               </span>
             )}
 
-            {!productDetail?.isSold && yourOffers?.length === 0 && (
-              <span className="detailButton" onClick={() => hideAndSeek(true)}>
+            {productDetail.isOfferable && !isSold && yourOffers?.length === 0 && (
+              <span
+                className="detailButton"
+                onClick={
+                  !!userInfo
+                    ? () => hideAndSeek(true)
+                    : () => navigate(`/login`)
+                }
+              >
                 <span>Teklif Ver</span>
               </span>
             )}
-            {!productDetail?.isSold && !(yourOffers?.length === 0) && (
+            {!isSold && !(yourOffers?.length === 0) && (
               <span className="detailButton" onClick={() => deleteOffer()}>
                 <span>Teklifi Geri Çek</span>
               </span>

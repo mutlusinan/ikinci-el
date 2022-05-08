@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import logo from "../img/loginLogo.png";
-import Plus from "../constants/Plus.js";
-import Dude from "../constants/Dude.js";
+import logo from "../../img/loginLogo.png";
+import Plus from "../../constants/Plus.js";
+import Dude from "../../constants/Dude.js";
 import {  useNavigate } from "react-router-dom";
 
 function Header() {

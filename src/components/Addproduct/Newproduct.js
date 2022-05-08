@@ -4,9 +4,8 @@ import { Formik, ErrorMessage } from "formik";
 import axios from "axios";
 import clsx from "clsx";
 
-import "../css/DragUploader.css";
-import closeButton from "../img/closeButton.png";
-import { ProductSchema } from "../constants/yupSchema";
+import closeButton from "../../img/closeButton.png";
+import { ProductSchema } from "../../constants/yupSchema";
 
 function Newproduct() {
   const navigate = useNavigate();

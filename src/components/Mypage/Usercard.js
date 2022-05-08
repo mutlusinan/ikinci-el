@@ -1,4 +1,4 @@
-import Avatar from "../constants/Avatar.js";
+import Avatar from "../../constants/Avatar.js";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 

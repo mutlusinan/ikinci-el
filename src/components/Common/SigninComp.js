@@ -6,10 +6,10 @@ import axios from "axios";
 import clsx from "clsx";
 
 import "react-toastify/dist/ReactToastify.css";
-import logo from "../img/loginLogo.png";
+import logo from "../../img/loginLogo.png";
 
-import { SigninSchema } from "../constants/yupSchema";
-import { signinErrorNotify } from "../constants/toastrNotify";
+import { SigninSchema } from "../../constants/yupSchema";
+import { signinErrorNotify } from "../../constants/toastifyNotify";
 
 function SigninComp() {
   const navigate = useNavigate();

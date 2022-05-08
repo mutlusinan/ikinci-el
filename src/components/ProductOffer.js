@@ -4,7 +4,7 @@ import UnselectedOffer from "../constants/UnselectedOffer";
 import SelectedOffer from "../constants/SelectedOffer";
 import axios from "axios";
 
-function ProductOffer({ productDetail }) {
+function ProductOffer({ productDetail, setYourOffers }) {
   const [offerPrice, setOfferPrice] = useState();
   const [offerSelect, setOfferSelect] = useState(4);
 
@@ -28,7 +28,9 @@ function ProductOffer({ productDetail }) {
         config
       )
       .then((response) => {
-        window.location.reload();
+        setYourOffers([response.data]);
+        console.log(response.data);
+        hideAndSeek(false);
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -59,7 +61,9 @@ function ProductOffer({ productDetail }) {
         .querySelector(".absoluteBlueBackgroundOffer")
         .classList.remove("hidden");
     } else {
-      document.querySelector(".absoluteBlueBackgroundOffer").classList.add("hidden");
+      document
+        .querySelector(".absoluteBlueBackgroundOffer")
+        .classList.add("hidden");
     }
   }
 

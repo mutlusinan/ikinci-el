@@ -1,5 +1,5 @@
-import LadyInBlue from "../components/LadyInBlue";
-import SigninComp from "../components/SigninComp";
+import LadyInBlue from "../components/Common/LadyInBlue";
+import SigninComp from "../components/Common/SigninComp";
 
 function Signin() {
   return (

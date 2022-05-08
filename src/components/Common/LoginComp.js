@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Formik, ErrorMessage } from "formik";
@@ -6,10 +6,10 @@ import axios from "axios";
 import clsx from "clsx";
 
 import "react-toastify/dist/ReactToastify.css";
-import logo from "../img/loginLogo.png";
+import logo from "../../img/loginLogo.png";
 
-import { LoginSchema } from "../constants/yupSchema";
-import { loginErrorNotify } from "../constants/toastrNotify";
+import { LoginSchema } from "../../constants/yupSchema";
+import { loginErrorNotify } from "../../constants/toastifyNotify";
 
 function LoginComp() {
   const navigate = useNavigate();

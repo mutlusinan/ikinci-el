@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
-function ProductBuy({ productDetail }) {
-  const navigate = useNavigate();
+function ProductBuy({ productDetail, setIsSold }) {
   const [loading, setLoading] = useState(false);
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -15,6 +13,8 @@ function ProductBuy({ productDetail }) {
   };
 
   async function buyProduct() {
+    setLoading(true);
+
     await axios
       .put(
         `https://bootcamp.akbolat.net/products/${productDetail.id}`,
@@ -22,9 +22,9 @@ function ProductBuy({ productDetail }) {
         config
       )
       .then(() => {
-        setLoading(true);
-        window.location.reload();
+        setIsSold(true);
       })
+      .then(hideAndSeek())
       .finally(() => {
         setLoading(false);
       });

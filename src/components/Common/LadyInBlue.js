@@ -1,5 +1,5 @@
 import React from 'react'
-import ladyInBlue from "../img/ladyInBlue.png"
+import ladyInBlue from "../../img/ladyInBlue.png"
 
 
 function LadyInBlue() {

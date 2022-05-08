@@ -1,11 +1,7 @@
-import React, { useEffect, useState, useContext } from "react";
-import { StoreContext } from "../contexts/StoreContext.js";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function Slider() {
-
-  const { setClickedCategory } = useContext(StoreContext);
-
+function Slider({ setClickedCategory }) {
   const [categoryData, setCategoryData] = useState([]);
   const [categoryLoad, setCategoryLoad] = useState(false);
 
@@ -13,8 +9,7 @@ function Slider() {
     axios
       .get("https://bootcamp.akbolat.net/categories")
       .then((response) => setCategoryData(response.data))
-      .then((data) => setCategoryLoad(true))
-      
+      .then((data) => setCategoryLoad(true));
   }, []);
 
   const activeCategory = async (e) => {

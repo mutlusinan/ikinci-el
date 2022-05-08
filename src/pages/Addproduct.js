@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import Newproduct from "../components/Newproduct";
+import Header from "../components/Common/Header";
+import Newproduct from "../components/Addproduct/Newproduct";
 import React from "react";
 
 function Addproduct() {

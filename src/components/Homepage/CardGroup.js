@@ -1,10 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState, useContext } from "react";
-import Card from "../components/Card";
-import { StoreContext } from "../contexts/StoreContext.js";
+import React, { useEffect, useState } from "react";
+import Card from "./Card";
 
-function CardGroup() {
-  const { clickedCategory, setClickedCategory } = useContext(StoreContext);
+function CardGroup({clickedCategory}) {
 
   const [cardData, setCardData] = useState([]);
   const [cardLoad, setCardLoad] = useState(false);
@@ -13,7 +11,6 @@ function CardGroup() {
       .get("https://bootcamp.akbolat.net/products?_limit=2000")
       .then((response) => setCardData(response.data))
       .then(() => setCardLoad(true));
-    setClickedCategory("Hepsi");
   }, []);
 
   return (
