@@ -1,6 +1,6 @@
 https://ikinci-el.vercel.app/
 
-(After this part, I updated file after project deadline. Please consider this during evaluation. Thank you.)
+### (After this part, I updated file after project deadline. Please consider this during evaluation. Thank you.)
 
 # İkinci El App
 
@@ -24,6 +24,17 @@ Then you can run with:
 ### `npm run`
 
 After this step, open http://localhost:3000 to view it in your browser.
+
+## Technologies, libraries, packages & tools
+
+| - | Description |
+| ------------- |:-------------:|
+| React | Main library |
+| React Router DOM      | Routing operations |
+| Yup & Formik | Validation and warnings |
+| Toastify | Notifications (toasters) |
+| Axios | HTTP client for API |
+| clsx | Controlling classes with conditions |
 
 ## Screenshots
 ### Main Page
