@@ -31,6 +31,7 @@ After this step, open http://localhost:3000 to view it in your browser.
 | Toastify | Notifications (toasters) |
 | Axios | HTTP client for API |
 | clsx | Controlling classes with conditions |
+| SCSS | CSS compiler |
 
 ## Screenshots
 ### Main Page
