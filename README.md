@@ -1,7 +1,3 @@
-https://ikinci-el.vercel.app/
-
-### (After this part, I updated file after project deadline. Please consider this during evaluation. Thank you.)
-
 # İkinci El App
 
 ![loginLogo](https://user-images.githubusercontent.com/19624037/167595368-21fdd706-5f68-411c-9348-6fc636039e98.png)
